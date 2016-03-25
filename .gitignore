@@ -1,0 +1,8 @@
+deploy/
+$*
+*~
+*.swp
+*.bak
+*.iss
+!vsto-installer.iss
+!inc/*.iss
