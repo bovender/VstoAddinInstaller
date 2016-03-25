@@ -4,5 +4,7 @@ $*
 *.swp
 *.bak
 *.iss
+bin/
+obj/
 !vsto-installer.iss
 !inc/*.iss
