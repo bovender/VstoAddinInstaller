@@ -23,7 +23,7 @@
 ; The included file adds all files contained in the SOURCEDIR
 Source: {#AddBackslash(SOURCEDIR)}*; DestDir: {app};
 
-; Define any additional files in the custom files.iss file.
+; Define any additional files in a custom files.iss file.
 #ifexist "files.iss"
   #include "files.iss"
 #endif

@@ -85,8 +85,4 @@ SolidCompression=true
   WizardSmallImageFile={#SETUPFILESDIR}{#INSTALLER_IMAGE_SMALL}
 #endif
 
-; Checksums for additional runtime files.
-#define DOTNETSHA1 "58da3d74db353aad03588cbb5cea8234166d8b99"
-#define VSTORSHA1 "ad1dcc5325cb31754105c8c783995649e2208571"
-
 ; vim: ts=2 sts=2 sw=2 et
