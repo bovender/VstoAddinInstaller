@@ -30,7 +30,6 @@ function CloseAppInteractively(): boolean;
 var
   i: LongInt;
   hWnd: LongInt;
-  IsUpdate: boolean;
   bCancel: boolean;
 begin
   Log('CloseOfficeAppInteractively(''' + OfficeWindowName() + ''')');
