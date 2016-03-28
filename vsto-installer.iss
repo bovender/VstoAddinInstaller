@@ -1,32 +1,18 @@
-; VstoAddinInstaller
-; InnoSetup script to install Visual Studio for Office (VSTO) addins.
-; Originally developed for Daniel's XL Toolbox NG (www.xltoolbox.net).
-; Requires the InnoSetup Preprocessor (ISPP).
-; Copyright (C) 2016  Daniel Kraus <http://github.com/bovender>
-; 
-; Licensed under the Apache License, Version 2.0 (the "License");
-; you may not use this file except in compliance with the License.
-; You may obtain a copy of the License at
-;
-;     http://www.apache.org/licenses/LICENSE-2.0
-;
-; Unless required by applicable law or agreed to in writing, software
-; distributed under the License is distributed on an "AS IS" BASIS,
-; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-; See the License for the specific language governing permissions and
-; limitations under the License.
+; =====================================================================
+; == vsto-installer.iss
+; == Part of VstoAddinInstaller
+; == (https://github.com/bovender/VstoAddinInstaller)
+; == (c) 2016 Daniel Kraus <bovender@bovender.de>
+; == Published under the Apache License 2.0
+; == See http://www.apache.org/licenses
+; =====================================================================
 
-[Setup]
-; Uncomment the following line to use the Debug configuration rather
-; than Release
-; #define DEBUG
-
-#include "inc/defines.iss"
-
-#ifexist "config.iss"        
-  #include "config.iss"
+#ifndef APP_GUID
+  #error You must not run this file directly. Make a copy of config-dist/make-installer.dist.iss, edit it and run it.
 #endif
 
+[Setup]
+#include "inc/defines.iss"
 #include "inc/setup.iss"
 	
 ; Inno Downloader Plugin is required for this
@@ -35,7 +21,7 @@
 
 [Files]
 ; The included file adds all files contained in the SOURCEDIR
-#include "inc/files-addins.iss"
+Source: {#AddBackslash(SOURCEDIR)}*; DestDir: {app};
 
 ; Define any additional files in the custom files.iss file.
 #ifexist "files.iss"
@@ -56,8 +42,8 @@
 #endif
 
 [Languages]
-Name: English; MessagesFile: compiler:Default.isl; 
-Name: Deutsch; MessagesFile: compiler:Languages\German.isl; 
+Name: en; MessagesFile: compiler:Default.isl; 
+Name: de; MessagesFile: compiler:Languages\German.isl; 
 #ifexist "languages.iss"
   #include "languages.iss"
 #endif
@@ -70,4 +56,4 @@ Name: Deutsch; MessagesFile: compiler:Languages\German.isl;
   #include "messages.iss"
 #endif
 
-; vim: set ts=2 sts=2 sw=2 noet tw=60 fo+=lj cms=;%s 
+; vim: ts=2 sts=2 sw=2 et cms=;%s 

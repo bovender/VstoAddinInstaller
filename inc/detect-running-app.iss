@@ -1,20 +1,40 @@
 {
+=====================================================================
+== inc/detect-running-app.iss
+== Determine the name of the Office application's main window.
+== Part of VstoAddinInstaller
+== (https://github.com/bovender/VstoAddinInstaller)
+== (c) 2016 Daniel Kraus <bovender@bovender.de>
+== Published under the Apache License 2.0
+== See http://www.apache.org/licenses
+=====================================================================
+}
+
+function OfficeWindowName(): string;
+begin
+#if TARGET_HOST == "excel"
+  result := 'xlmain';
+#else
+  result := ''; { TODO }
+#endif
+end;
+
+{
   Detect if a given Office application is running and offers
   to close it, or abort the installation.
   windowName: name of the application's main window (e.g. 'XLMAIN')
   Returns true if the app was either not running or has been closed.
   Returns false if the user aborted the installation.
 }
-function CloseAppInteractively(windowName: string): boolean;
+function CloseAppInteractively(): boolean;
 var
   i: LongInt;
   hWnd: LongInt;
   IsUpdate: boolean;
   bCancel: boolean;
-  CallName: string;
 begin
-  Log('CloseOfficeAppInteractively(''' + windowName + ''')');
-  hWnd := FindWindowByClassName(windowName);
+  Log('CloseOfficeAppInteractively(''' + OfficeWindowName() + ''')');
+  hWnd := FindWindowByClassName(OfficeWindowName());
 
   {
     If Excel is running, hWnd is different from 0.
@@ -30,15 +50,15 @@ begin
     else
     begin
       Log('App running - attempting to close...');
-      ExcelExePath := GetProcessExePath(Hwnd);
+      { ExcelExePath := GetProcessExePath(Hwnd); }
       SendMessage(hWnd, WM_CLOSE, 0, 0); { WM_CLOSE: $10 }
       Sleep(200);
-      hWnd := FindWindowByClassName('XLMAIN');
+      hWnd := FindWindowByClassName(OfficeWindowName());
     end;
   end;
 
   Result := (hWnd = 0);
-end
+end;
 
 {
   Close a given Office application if it is running.
@@ -47,17 +67,18 @@ end
   can later be restarted.
   Returns an empty string if the app is not running.
 }
-function CloseAppNoninteractively(windowName: string): string;
+function CloseAppNoninteractively(): string;
 var
-  exePath: string
+  exePath: string;
+  hWnd: LongInt;
 begin
-  Log('CloseOfficeAppInteractively(''' + windowName + ''')');
-  hwnd := FindWindowByClassName(windowName);
+  Log('CloseOfficeAppInteractively(''' + OfficeWindowName() + ''')');
+  hWnd := FindWindowByClassName(OfficeWindowName());
   exePath := '';
   if hWnd <> 0 then
   begin
-    exePath := GetProcessExePath(Hwnd);
-    Log(CallName+'Sending WM_CLOSE...');
+    exePath := GetProcessExePath(hWnd);
+    Log('Sending WM_CLOSE...');
     SendMessage(hWnd, WM_CLOSE, 0, 0); { WM_CLOSE: $10 }
 
     {
@@ -71,4 +92,4 @@ begin
   Result := exePath;
 end;
 
-// vim: ft=pascal sw=2 sts=2 et
+{ vim: set ft=pascal sw=2 sts=2 et : }

@@ -5,6 +5,7 @@ var
   PageInstallInfo: TOutputMsgWizardPage;
   prerequisitesChecked: boolean;
   prerequisitesMet: boolean;
+  exePath: string;
 
 
 #include "constants.iss"
@@ -39,56 +40,6 @@ function ShouldShowDirPage(): boolean;
 begin
   result := IsAdminLoggedOn or IsZeroClient;
 end;
-	
-{
-  Checks if a given Excel version is installed
-}
-function IsExcelVersionInstalled(version: integer): boolean;
-var key: string;
-var lookup1, lookup2: boolean;
-begin
-  key := 'Microsoft\Office\' + IntToStr(version) + '.0\Excel\InstallRoot';
-  lookup1 := RegKeyExists(HKEY_LOCAL_MACHINE, 'SOFTWARE\' + GetWowNode + key);
-  
-  // If checking for version >= 14.0 ("2010"), which was the first version
-  // that was produced in both 32-bit and 64-bit, on a 64-bit system we
-  // also need to check a path without  'Wow6434Node'.
-  if IsWin64 and (version >= 14) then
-  begin
-    lookup2 := RegKeyExists(HKEY_LOCAL_MACHINE, 'SOFTWARE\' + key);
-  end;
-  
-  result := lookup1 or lookup2;
-end;
-
-{
-  Determines whether or not a system-wide installation
-  is possible. This depends on whether the current user
-  is an administrator, and whether the hotfix KB976477
-  is present on the system if Excel 2007 is the only version
-  of Excel that is present (without that hotfix, Excel
-  2007 does not load add-ins that are registered in the
-  HKLM hive).
-}
-function CanInstallSystemWide(): boolean;
-begin
-  if IsAdminLoggedOn then
-  begin
-    if IsOnlyExcel2007Installed then
-    begin
-      result := IsHotfixInstalled;
-    end
-    else
-    begin
-      result := true;
-    end;
-  end
-  else
-  begin
-    result := false;
-  end;
-end;
-
 
 function InitializeSetup(): boolean;
 var
@@ -114,7 +65,7 @@ begin
   else
   begin
     result := True;
-  end
+  end;
 
   for i := 1 to ParamCount do
   begin
@@ -122,14 +73,14 @@ begin
     begin
       Log('/UPDATE switch found');
       isUpdate := true;
-      exePath := CloseAppNoninteractively('XLMAIN');
+      exePath := CloseAppNoninteractively();
       result := true;
     end
   end;
 
   if not isUpdate then
   begin
-    result := CloseAppInteractively('XLMAIN');
+    result := CloseAppInteractively();
   end;
 end;
 	
@@ -161,6 +112,7 @@ begin
   result := True;
   if not WizardSilent then
   begin
+    {
     if CurPageID = PageDevelopmentInfo.Id then
     begin
       if PageDevelopmentInfo.Values[0] = False then
@@ -170,6 +122,7 @@ begin
         result := False;
       end;
     end;
+    }
   end;
 
   if not PrerequisitesAreMet then
@@ -281,14 +234,6 @@ begin
     }
     result := not ShouldShowDirPage;
   end
-end;
-
-{
-  Helper function that evaluates the custom PageSingleOrMultiUser page.
-}
-function IsMultiUserInstall(): Boolean;
-begin
-  result := PageSingleOrMultiUser.Values[1];
 end;
 
 {

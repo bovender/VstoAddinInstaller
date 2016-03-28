@@ -1,6 +1,6 @@
-OfficeIsRunning=Please close the currently running Office applications to enable installation.
+en.OfficeIsRunning=Please close the currently running Office applications to enable installation.
 
-Deutsch.OfficeIsRunning=Bitte schließen Sie die aktuell laufenden Office-Programme, um die Installation zu ermöglichen.
+de.OfficeIsRunning=Bitte schließen Sie die aktuell laufenden Office-Programme, um die Installation zu ermöglichen.
 
 en.SingleOrMulti=Single-user or system-wide install
 en.SingleOrMultiSubcaption=Install for the current user only or for all users
