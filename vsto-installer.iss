@@ -11,6 +11,11 @@
   #error You must not run this file directly. Make a copy of config-dist/make-installer.dist.iss, edit it and run it.
 #endif
 
+#if (TARGET_HOST != "excel") && (TARGET_HOST != "word")
+  #error You must choose between "excel" and "word" as target host applications. PowerPoint and others are currently not supported.
+#endif
+
+
 [Setup]
 #include "inc/defines.iss"
 #include "inc/setup.iss"

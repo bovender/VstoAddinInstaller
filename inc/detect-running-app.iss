@@ -14,7 +14,7 @@ function OfficeWindowName(): string;
 begin
 #if TARGET_HOST == "excel"
   result := 'xlmain';
-#else
+#elif TARGET_HOST == "word"
   result := ''; { TODO }
 #endif
 end;
