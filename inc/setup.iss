@@ -1,3 +1,12 @@
+; =====================================================================
+; == inc/setup.iss
+; == Part of VstoAddinInstaller
+; == (https://github.com/bovender/VstoAddinInstaller)
+; == (c) 2016 Daniel Kraus <bovender@bovender.de>
+; == Published under the Apache License 2.0
+; == See http://www.apache.org/licenses
+; =====================================================================
+
 #ifdef VERSIONFILE
   ; Read the semantic and the installer file version from the VERSION file
   #define FILE_HANDLE FileOpen(VERSIONFILE)

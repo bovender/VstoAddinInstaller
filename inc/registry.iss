@@ -1,3 +1,13 @@
+; =====================================================================
+; == inc/registry.iss
+; == Registry keys section
+; == Part of VstoAddinInstaller
+; == (https://github.com/bovender/VstoAddinInstaller)
+; == (c) 2016 Daniel Kraus <bovender@bovender.de>
+; == Published under the Apache License 2.0
+; == See http://www.apache.org/licenses
+; =====================================================================
+
 ValueName: EnableVSTOLocalUNC; ValueData: 1; ValueType: dword; Root: HKLM; Subkey: SOFTWARE\Microsoft\Vsto Runtime Setup\v4; Flags: noerror
 
 ; Keys for single-user install (HKCU)
@@ -13,3 +23,5 @@ Check: IsMultiUserInstall; ValueName: FriendlyName; ValueData: {#APPNAME}; Value
 Check: IsMultiUserInstall; ValueName: LoadBehavior; ValueData: 3; ValueType: dword; Root: HKLM; Subkey: {#REGKEY}; Flags: uninsdeletekey
 Check: IsMultiUserInstall; ValueName: Warmup; ValueData: 1; ValueType: dword; Root: HKLM; Subkey: {#REGKEY}; Flags: uninsdeletekey
 Check: IsMultiUserInstall; ValueName: Manifest; ValueData: file:///{code:ConvertSlash|{app}}/{#ADDINNAME}.vsto|vstolocal; ValueType: string; Root: HKLM; Subkey: {#REGKEY}; Flags: uninsdeletekey
+
+; vim: nowrap

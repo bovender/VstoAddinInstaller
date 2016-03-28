@@ -1,7 +1,13 @@
 {
-	===========================================================
-	== Win32 API Calls																				 
-	===========================================================
+=====================================================================
+== inc/win32.iss
+== Win32 API support functions
+== Part of VstoAddinInstaller
+== (https://github.com/bovender/VstoAddinInstaller)
+== (c) 2016 Daniel Kraus <bovender@bovender.de>
+== Published under the Apache License 2.0
+== See http://www.apache.org/licenses
+=====================================================================
 }
 
 function GetProcessID(hProcess: LongInt): LongInt;
@@ -25,11 +31,6 @@ external 'GetLogicalDriveStringsA@kernel32.dll stdcall delayload setuponly';
 function QueryDosDevice(lpDeviceName: string; lpTargetPath: string; ucchMax: LongInt): LongInt;
 external 'QueryDosDeviceA@kernel32.dll stdcall delayload setuponly';
 
-
-
-{ =========================================================== }
-{ == Initializing
-{ =========================================================== }
 
 {
 	Identifies the process that owns hWnd and returns the
@@ -122,4 +123,4 @@ begin
 	end;
 end;
 
-{ vim: set ft=pascal ts=2 sts=2 sw=2 noet tw=60 fo+=lj :}
+{ vim: set ft=pascal ts=2 sts=2 sw=2 et : }

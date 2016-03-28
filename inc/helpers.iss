@@ -1,4 +1,16 @@
 {
+=====================================================================
+== inc/helpers.iss
+== Helper functions
+== Part of VstoAddinInstaller
+== (https://github.com/bovender/VstoAddinInstaller)
+== (c) 2016 Daniel Kraus <bovender@bovender.de>
+== Published under the Apache License 2.0
+== See http://www.apache.org/licenses
+=====================================================================
+}
+
+{
   Converts backslashes to forward slashes.
 }
 function ConvertSlash(Value: string): string;
@@ -33,9 +45,11 @@ begin
   key := 'Microsoft\Office\' + IntToStr(version) + '.0\Excel\InstallRoot';
   lookup1 := RegKeyExists(HKEY_LOCAL_MACHINE, 'SOFTWARE\' + GetWowNode + key);
   
-  // If checking for version >= 14.0 ("2010"), which was the first version
-  // that was produced in both 32-bit and 64-bit, on a 64-bit system we
-  // also need to check a path without  'Wow6434Node'.
+  {
+    If checking for version >= 14.0 ("2010"), which was the first version
+    that was produced in both 32-bit and 64-bit, on a 64-bit system we
+    also need to check a path without  'Wow6434Node'.
+  }
   if IsWin64 and (version >= 14) then
   begin
     lookup2 := RegKeyExists(HKEY_LOCAL_MACHINE, 'SOFTWARE\' + key);
@@ -53,7 +67,7 @@ var
 begin
   result := IsExcelVersionInstalled(12);
 
-  // Iterate through all
+  { Iterate through all }
   for i := 14 to maxExcel do
   begin
     if IsExcelVersionInstalled(i) then
@@ -128,7 +142,7 @@ var
 begin
   if GetOfficeBuild(14, build) then
   begin
-    result := build = 4763; // 4763 is the original Office 2007 build
+    result := build = 4763; { 4763 is the original Office 2007 build }
     if result then
       Log('Detected Office 2010 without service pack (v. 14.0, build 4763)')
     else

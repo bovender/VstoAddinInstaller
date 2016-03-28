@@ -1,3 +1,15 @@
+{
+=====================================================================
+== inc/code.iss
+== Pascal/RemObjects code section
+== Part of VstoAddinInstaller
+== (https://github.com/bovender/VstoAddinInstaller)
+== (c) 2016 Daniel Kraus <bovender@bovender.de>
+== Published under the Apache License 2.0
+== See http://www.apache.org/licenses
+=====================================================================
+}
+
 var
   PageSingleOrMultiUser: TInputOptionWizardPage;
   PageCannotInstall: TInputOptionWizardPage;

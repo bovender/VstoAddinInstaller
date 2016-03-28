@@ -1,6 +1,14 @@
-en.OfficeIsRunning=Please close the currently running Office applications to enable installation.
+; =====================================================================
+; == inc/messages.iss
+; == Part of VstoAddinInstaller
+; == (https://github.com/bovender/VstoAddinInstaller)
+; == (c) 2016 Daniel Kraus <bovender@bovender.de>
+; == Published under the Apache License 2.0
+; == See http://www.apache.org/licenses
+; =====================================================================
 
-de.OfficeIsRunning=Bitte schließen Sie die aktuell laufenden Office-Programme, um die Installation zu ermöglichen.
+en.OfficeIsRunning=Your Office application must be closed in order to continue installation. If you click 'OK', the application will be shut down.
+de.OfficeIsRunning=Ihre Office-Anwendung muß geschlossen werden, um mit der Installation fortzufahren. Wenn Sie auf 'OK' klicken, wird die Anwendung geschlossen.
 
 en.SingleOrMulti=Single-user or system-wide install
 en.SingleOrMultiSubcaption=Install for the current user only or for all users
