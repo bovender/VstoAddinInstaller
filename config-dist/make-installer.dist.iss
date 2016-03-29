@@ -69,6 +69,7 @@
 #define APP_GUID "{{...your UID here...}"
 #define PRODUCT "Name_of_the_addin_without_spaces"
 #define COMPANY "Your company name"
+#define DESCRIPTION "Describe your add-in in one short sentence."
 #define HOMEPAGE "http://www.example.com"
 
 ; SOURCEDIR is the directory that contains the files that

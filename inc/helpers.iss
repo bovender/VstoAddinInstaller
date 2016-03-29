@@ -55,7 +55,7 @@ end;
 {
   Returns the add-in registry key for the Office app.
 }
-function GetRegKey(): string;
+function GetRegKey(param: string): string;
 var
   targetCrumb: string;
   addinCrumb: string;

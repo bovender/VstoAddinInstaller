@@ -33,6 +33,9 @@ Source: {#AddBackslash(SOURCEDIR)}*; DestDir: {app};
   #include "files.iss"
 #endif
 
+[Registry]
+#include "inc/registry.iss"
+
 [Tasks]
 ; Define any tasks in the custom tasks.iss file.
 #ifexist "tasks.iss"
