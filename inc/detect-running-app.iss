@@ -10,12 +10,26 @@
 =====================================================================
 }
 
+{
+  Returns the class name of the main window of the hosting Office application.
+  See http://users.skynet.be/am044448/Programmeren/VBA/vba_class_names.htm
+}
 function OfficeWindowName(): string;
 begin
 #if TARGET_HOST == "excel"
   result := 'xlmain';
 #elif TARGET_HOST == "word"
-  result := ''; { TODO }
+  result := 'opusapp';
+#elif TARGET_HOST == "powerpoint"
+  { TODO: Deal with different PowerPoint versions; PP10FrameClass is for
+    PowerPoint XP only... }
+  result := 'PP10FrameClass';
+#elif TARGET_HOST == "access"
+  result := 'omain';
+#elif TARGET_HOST == "outlook"
+  result := 'rctrl_renwnd32';
+#else
+  #error Cannot handle this TARGET_HOST value in OfficeWindowName()
 #endif
 end;
 
