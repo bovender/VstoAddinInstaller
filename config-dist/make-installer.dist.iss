@@ -21,10 +21,8 @@
 ; == DEBUG MODE
 
 ; Uncomment the line below to enable debug mode.
-; In debug mode, the installer executable will be named with
-; 'debug' rather than the current version number.
-; It is up to you to handle different source directories.
 ; #define DEBUG
+
 
 ; =====================================================================
 ; == VERSION INFORMATION
@@ -87,6 +85,7 @@
 
 #define LOGFILE "INST-LOG.TXT"
 
+
 ; =====================================================================
 ; == ADDITIONAL FILES NEEDED DURING COMPILATION
 
@@ -107,6 +106,24 @@
 
 ; Small image to display in the setup wizard; 48x48 px
 ; #define INSTALLER_IMAGE_SMALL "logo-small.bmp"
+
+
+; =====================================================================
+; == DEBUG MODE
+
+; You can optionally build your VSTO project.
+; Adjust the paths below for your specific set-up and uncomment the lines.
+; #define DEVENV "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.com"
+; #define CSPROJ "C:\full\path\to\your\project.csproj"
+; #ifdef DEBUG
+;   #expr Exec(DEVENV, CSPROJ + " /Build Release")
+; #else
+;   #expr Exec(DEVENV, CSPROJ + " /Build Debug")
+; #endif
+
+
+; =====================================================================
+; == INCLUDE VSTOADDININSTALLER SCRIPTS
 
 ; If the VstoAddinInstaller files are in a different subdirectory
 ; than 'VstoAddinInstaller', change the path below.
