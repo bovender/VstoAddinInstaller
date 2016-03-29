@@ -19,6 +19,10 @@
   #error Did not find the specified VSTOFILE in SOURCEDIR, please check the spelling -- and make sure you have actually built the project!
 #endif
 
+#ifndef SETUPFILESDIR
+  #define SETUPFILESDIR "setup-files\"
+#endif
+
 
 [Setup]
 #include "inc/defines.iss"
