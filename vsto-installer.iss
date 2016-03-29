@@ -15,6 +15,10 @@
   #error You must choose between "excel" and "word" as target host applications. PowerPoint and others are currently not supported.
 #endif
 
+#if !FileExists(AddBackslash(SOURCEDIR) + VSTOFILE)
+  #error Did not find the specified VSTOFILE in SOURCEDIR, please check the spelling.
+#endif
+
 
 [Setup]
 #include "inc/defines.iss"
