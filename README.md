@@ -113,6 +113,12 @@ indicated. You can generate a GUID using the corresponding command
 from the `Tools` menu in InnoSetup Studio, for example.
 
 
+### Compiling the installer
+
+To compile the installer, simply run your copy of `make-installer.iss` 
+through InnoSetup.
+
+
 ### Extending
 
 If you wish to add additional capabilities to your installer (e.g. 
