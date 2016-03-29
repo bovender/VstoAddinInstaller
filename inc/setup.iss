@@ -49,8 +49,6 @@ LanguageDetectionMethod=locale
 SetupLogging=true
 TimeStampsInUTC=false
 UninstallFilesDir={app}\uninstall
-WizardImageBackColor=clWhite
-WizardImageStretch=false
 
 ; Allow normal users to install the addin into their profile.
 ; This directive also ensures that the uninstall information is
