@@ -16,7 +16,7 @@
 #endif
 
 #if !FileExists(AddBackslash(SOURCEDIR) + VSTOFILE)
-  #error Did not find the specified VSTOFILE in SOURCEDIR, please check the spelling.
+  #error Did not find the specified VSTOFILE in SOURCEDIR, please check the spelling -- and make sure you have actually built the project!
 #endif
 
 
