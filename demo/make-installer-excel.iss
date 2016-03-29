@@ -1,5 +1,5 @@
 ; =====================================================================
-; == demo\make-installer.iss
+; == demo\make-installer-excel.iss
 ; == Part of VstoAddinInstaller
 ; == (https://github.com/bovender/VstoAddinInstaller)
 ; == (c) 2016 Daniel Kraus <bovender@bovender.de>
@@ -11,7 +11,7 @@
 ; To try out this script, you must first build the VSTO project in
 ; Visual Studio with Debug configuration.
 
-#define VERSIONFILE "VERSION.txt"
+#define VERSIONFILE "VERSION.TXT"
 
 #define TARGET_HOST "excel"
 #define APP_GUID "{{4915C6C4-11CB-420F-98D4-3609A24D8AC5}"
@@ -21,7 +21,7 @@
 #define PUB_YEARS "2016"
 
 #define SOURCEDIR "VstoInstallerDemoExcel\bin\Debug\"
-#define VSTOFILE "VstoInstaller.vsto"
+#define VSTOFILE "VstoInstallerDemoExcel.vsto"
 #define OUTPUTDIR "releases\"
 
 ; #define LOGFILE "INST-LOG.TXT"
