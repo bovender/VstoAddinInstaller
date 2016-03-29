@@ -23,6 +23,7 @@ var
 #include "constants.iss"
 #include "helpers.iss"
 #include "win32.iss"
+#include "environment.iss"
 #include "runtimes.iss"
 #include "wizard-pages.iss"
 #include "detect-running-app.iss"
@@ -56,23 +57,23 @@ end;
 function InitializeSetup(): boolean;
 var
   i: integer;
-  minExcelInstalled: boolean;
+  minVersionInstalled: boolean;
   isUpdate: boolean;
 begin
   {
     Determine if Excel 2007 or newer is installed (absolute requirement
     for this VSTO add-in). Excel 2007 ist version 12.0.
   }
-  for i := 12 to maxExcel do
+  for i := 12 to MAX_VERSION do
   begin
-    minExcelInstalled := minExcelInstalled or IsExcelVersionInstalled(i);
+    minVersionInstalled := minVersionInstalled or IsHostVersionInstalled(i);
   end;
 
-  if not minExcelInstalled then
+  if not minVersionInstalled then
   begin
     result := False;
-    Log('Informing user that Excel 2007 or newer is required.');
-    MsgBox(CustomMessage('Excel2007Required'), mbInformation, MB_OK);
+    Log('Informing user that Office 2007 or newer is required.');
+    MsgBox(CustomMessage('Office2007Required'), mbInformation, MB_OK);
   end
   else
   begin
@@ -210,9 +211,9 @@ begin
 
   if PageID = PageSingleOrMultiUser.ID then
   begin
-    if IsOnlyExcel2007Installed then
+    if IsOnly2007Installed then
     begin
-      Log('Only Excel 2007 appears to be installed on this system.');
+      Log('Only Office 2007 appears to be installed on this system.');
       if IsHotfixInstalled then
       begin
         Log('Hotfix KB976477 found; can install for all users.');
@@ -224,7 +225,7 @@ begin
     end
     else
     begin
-      Log('Excel 2010 or newer found on this system.');
+      Log('Office 2010 or newer found on this system.');
     end;
     if CanInstallSystemWide then
     begin

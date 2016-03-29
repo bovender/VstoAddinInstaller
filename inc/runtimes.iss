@@ -14,7 +14,7 @@
 
 {
   Checks if the VSTO runtime is installed. This is relevant if only
-  Excel 2007 is installed. Since Office 2010, the CLR is
+  Office 2007 is installed. Since Office 2010, the CLR is
   automatically included.
   The presence of the VSTO runtime is indicated by the presence one of
   four possible registry keys.
@@ -70,23 +70,6 @@ begin
     prerequisitesChecked := true;
   end;
   result := prerequisitesMet;
-end;
-
-{
-  Checks if a file exists and has a valid Sha1 sum.
-}
-function IsFileValid(file: string; expectedSha1: string): boolean;
-var
-  actualSha1: string;
-begin
-  try
-    if FileExists(file) then
-    begin
-      actualSha1 := GetSHA1OfFile(file);
-    end;
-  finally
-    result := actualSha1 = expectedSha1;
-  end;
 end;
 
 {

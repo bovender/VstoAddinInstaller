@@ -15,7 +15,7 @@ en.SingleOrMultiSubcaption=Install for the current user only or for all users
 en.SingleOrMultiDesc=Please indicate the scope of this installation:
 en.SingleOrMultiSingle=Single user (only for me)
 en.SingleOrMultiAll=All users (system-wide)
-en.Excel2007Required=This add-in requires Office 2007 or later. Setup will now terminate.
+en.Office2007Required=This add-in requires Office 2007 or later. Setup will now terminate.
 
 ; CannotInstallPage [EN]
 en.CannotInstallCaption=Administrator privileges required
@@ -43,7 +43,7 @@ de.SingleOrMultiSubcaption=Geben Sie an, für wen die Installation sein soll
 de.SingleOrMultiDesc=Bitte geben Sie an, ob das Addin nur für Sie oder für alle Benutzer installiert werden soll.
 de.SingleOrMultiSingle=Ein Benutzer (nur für mich)
 de.SingleOrMultiAll=Alle Benutzer (systemweit)
-de.Excel2007Required=Dieses Add-in läuft nur auf Office 2007 und neueren Versionen.
+de.Office2007Required=Dieses Add-in läuft nur auf Office 2007 und neueren Versionen.
 
 ; "Download required" messages (.NET and VSTOR runtimes) [DE]
 de.CannotInstallCaption=Administratorrechte benötigt
