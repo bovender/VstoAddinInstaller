@@ -35,7 +35,7 @@
 ;   2. The four-number Windows file version (e.g., 2.1.8.3)
 ; Uncomment the line below to define VERSIONFILE, which will make the
 ; script read the version information from a text file
-#define VERSIONFILE "VERSION"
+#define VERSIONFILE "VERSION.TXT"
 
 ; Alternatively, you can indicate the version number directly in this
 ; script. The version numbers below will only be used if VERSIONFILE is
