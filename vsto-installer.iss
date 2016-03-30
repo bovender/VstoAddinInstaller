@@ -23,6 +23,13 @@
   #define SETUPFILESDIR "setup-files\"
 #endif
 
+; If ADDIN_SHORT_NAME is undefined, use the value from ADDIN_NAME.
+; Note however that the short name may be used as the directory name
+; and should not contain 'illegal' special characters.
+#ifndef ADDIN_SHORT_NAME
+  #define ADDIN_SHORT_NAME ADDIN_NAME
+#endif
+
 
 [Setup]
 #include "inc/defines.iss"
@@ -35,6 +42,11 @@
 [Files]
 ; The included file adds all files contained in the SOURCEDIR
 Source: {#AddBackslash(SOURCEDIR)}*; DestDir: {app};
+
+; Copy the installer icon, if defined, to the uninstall files dir
+#IFDEF INSTALLER_ICO
+  Source: {#AddBackslash(SETUPFILESDIR)}{#INSTALLER_ICO}; DestDir: {#UNINSTALLDIR};
+#ENDIF
 
 ; Define any additional files in a custom files.iss file.
 #ifexist "files.iss"

@@ -8,7 +8,7 @@
 ; =====================================================================
 
 en.OfficeIsRunning=Your Office application must be closed in order to continue installation. If you click 'OK', the application will be shut down.
-de.OfficeIsRunning=Ihre Office-Anwendung muÃŸ geschlossen werden, um mit der Installation fortzufahren. Wenn Sie auf 'OK' klicken, wird die Anwendung geschlossen.
+de.OfficeIsRunning=Ihre Office-Anwendung muß geschlossen werden, um mit der Installation fortzufahren. Wenn Sie auf 'OK' klicken, wird die Anwendung geschlossen.
 
 en.SingleOrMulti=Single-user or system-wide install
 en.SingleOrMultiSubcaption=Install for the current user only or for all users
@@ -39,28 +39,28 @@ en.DownloadNotValidated=A downloaded file has unexpected content. It may have no
 
 ; General messages [DE]
 de.SingleOrMulti=Einzelner oder alle Benutzer
-de.SingleOrMultiSubcaption=Geben Sie an, fÃ¼r wen die Installation sein soll
-de.SingleOrMultiDesc=Bitte geben Sie an, ob das Addin nur fÃ¼r Sie oder fÃ¼r alle Benutzer installiert werden soll.
-de.SingleOrMultiSingle=Ein Benutzer (nur fÃ¼r mich)
+de.SingleOrMultiSubcaption=Geben Sie an, für wen die Installation sein soll
+de.SingleOrMultiDesc=Bitte geben Sie an, ob das Addin nur für Sie oder für alle Benutzer installiert werden soll.
+de.SingleOrMultiSingle=Ein Benutzer (nur für mich)
 de.SingleOrMultiAll=Alle Benutzer (systemweit)
-de.Office2007Required=Dieses Add-in lÃ¤uft nur auf Office 2007 und neueren Versionen.
+de.Office2007Required=Dieses Add-in läuft nur auf Office 2007 und neueren Versionen.
 
 ; "Download required" messages (.NET and VSTOR runtimes) [DE]
-de.CannotInstallCaption=Administratorrechte benÃ¶tigt
-de.CannotInstallDesc=Sie haben nicht die erforderlichen Benutzerrechte, um weitere benÃ¶tigte Laufzeitdateien zu installieren.
-de.CannotInstallMsg=Sie kÃ¶nnen mit der Installation fortfahren, aber das Addin wird nicht starten, solange die VSTO-Laufzeitdateien nicht von einem Admin installiert wurden. Tipp: Wenn Sie Windows Vista oder neuer verwenden, klicken Sie mit der rechten Maustaste auf die Installationsdatei und wÃ¤hlen "Als Administrator ausfÃ¼hren".
+de.CannotInstallCaption=Administratorrechte benötigt
+de.CannotInstallDesc=Sie haben nicht die erforderlichen Benutzerrechte, um weitere benötigte Laufzeitdateien zu installieren.
+de.CannotInstallMsg=Sie können mit der Installation fortfahren, aber das Addin wird nicht starten, solange die VSTO-Laufzeitdateien nicht von einem Admin installiert wurden. Tipp: Wenn Sie Windows Vista oder neuer verwenden, klicken Sie mit der rechten Maustaste auf die Installationsdatei und wählen "Als Administrator ausführen".
 de.CannotInstallCont=Trotzdem installieren, obwohl es nicht funktionieren wird
 de.CannotInstallAbort=Installation abbrechen
 
 ; DownloadInfoPage [EN]
 de.RequiredCaption=Weitere Laufzeitdateien erforderlich
-de.RequiredDesc=Weitere Laufzeitdateien fÃ¼r das .NET-Framework von Microsoft werden benÃ¶tigt, um das Addin verwenden zu kÃ¶nnen.
-de.RequiredMsg=%d Datei(en) mit ca. %s MiB muÃŸ/mÃ¼ssen von den Microsoft-Servern heruntergeladen werden. Klicken Sie 'Weiter', um den Download zu beginnen.
+de.RequiredDesc=Weitere Laufzeitdateien für das .NET-Framework von Microsoft werden benötigt, um das Addin verwenden zu können.
+de.RequiredMsg=%d Datei(en) mit ca. %s MiB muß/müssen von den Microsoft-Servern heruntergeladen werden. Klicken Sie 'Weiter', um den Download zu beginnen.
 
 ; InstallInfoPage [EN]
 de.InstallCaption=Weitere .NET-Laufzeitdateien heruntergeladen
-de.InstallDesc=Die zusÃ¤tzlichen benÃ¶tigten Dateien von Microsoft kÃ¶nnen jetzt installiert werden.
+de.InstallDesc=Die zusätzlichen benötigten Dateien von Microsoft können jetzt installiert werden.
 de.InstallMsg=Klicken Sie 'Weiter', um mit der Installation zu beginnen.
 
-de.StillNotInstalled=Die zusÃ¤tzlichen benÃ¶tigten Dateien wurden leider nicht korrekt installiert, so daÃŸ die Installation nicht fortgesetzt werden kann.
-de.DownloadNotValidated=Es wurde unerwarteter Inhalt in einer heruntergeladenen Datei gefunden. Die Installation kann so nicht fortgesetzt werden. Sie kÃ¶nnen aber 'ZurÃ¼ck' und dann 'Weiter' klicken, um den Download neu zu beginnen.
+de.StillNotInstalled=Die zusätzlichen benötigten Dateien wurden leider nicht korrekt installiert, so daß die Installation nicht fortgesetzt werden kann.
+de.DownloadNotValidated=Es wurde unerwarteter Inhalt in einer heruntergeladenen Datei gefunden. Die Installation kann so nicht fortgesetzt werden. Sie können aber 'Zurück' und dann 'Weiter' klicken, um den Download neu zu beginnen.

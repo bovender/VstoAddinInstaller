@@ -15,7 +15,8 @@
 
 #define TARGET_HOST "excel"
 #define APP_GUID "{{4915C6C4-11CB-420F-98D4-3609A24D8AC5}"
-#define PRODUCT "VstoAddinInstallerDemoExcel"
+#define ADDIN_NAME "VstoAddinInstaller demo for Excel"
+#define ADDIN_SHORT_NAME "VstoAddinInstallerDemoExcel"
 #define COMPANY "Daniel Kraus (bovender)"
 #define HOMEPAGE "https://github.com/bovender/VstoAddinInstaller"
 #define DESCRIPTION "Demonstrate VstoAddinInstaller with Excel."

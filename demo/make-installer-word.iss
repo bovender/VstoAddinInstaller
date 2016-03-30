@@ -15,7 +15,8 @@
 
 #define TARGET_HOST "word"
 #define APP_GUID "{{4EA149D9-B1F5-44CD-A7F0-EA0B88C4B090}"
-#define PRODUCT "VstoAddinInstallerDemoWord"
+#define ADDIN_NAME "VstoAddinInstaller demo for Word"
+#define ADDIN_SHORT_NAME "VstoAddinInstallerDemoWord"
 #define COMPANY "Daniel Kraus (bovende)"
 #define HOMEPAGE "https://github.com/bovender/VstoAddinInstaller"
 #define DESCRIPTION "Demonstrate VstoAddinInstaller with Word."

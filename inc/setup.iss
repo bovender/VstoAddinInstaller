@@ -19,9 +19,9 @@
 #endif
 
 AppId={#APP_GUID}
-AppName={#PRODUCT}
-VersionInfoProductName={#PRODUCT}
-AppVerName={#PRODUCT} {#SEMANTIC_VERSION}
+AppName={#ADDIN_NAME}
+VersionInfoProductName={#ADDIN_NAME}
+AppVerName={#ADDIN_NAME} {#SEMANTIC_VERSION}
 AppPublisher={#COMPANY}
 VersionInfoCompany={#COMPANY}
 AppCopyright={#PUB_YEARS} {#COMPANY}
@@ -31,8 +31,16 @@ VersionInfoVersion={#FOUR_NUMBER_VERSION}
 VersionInfoProductVersion={#SEMANTIC_VERSION}
 VersionInfoTextVersion={#SEMANTIC_VERSION}
 AppPublisherURL={#HOMEPAGE}
-AppSupportURL={#HOMEPAGE}
-AppUpdatesURL={#HOMEPAGE}
+#ifdef HOMEPAGE_SUPPORT
+  AppSupportURL={#HOMEPAGE_SUPPORT}
+#else
+  AppSupportURL={#HOMEPAGE}
+#endif
+#ifdef HOMEPAGE_UPDATES
+  AppUpdatesURL={#HOMEPAGE_UPDATES}
+#else
+  AppUpdatesURL={#HOMEPAGE}
+#endif
 OutputDir={#OUTPUTDIR}
 
 AppendDefaultDirName=false
@@ -48,7 +56,8 @@ DisableReadyPage=false
 LanguageDetectionMethod=locale
 SetupLogging=true
 TimeStampsInUTC=false
-UninstallFilesDir={app}\uninstall
+#DEFINE UNINSTALLDIR "{app}\uninstall"
+UninstallFilesDir={#UNINSTALLDIR}
 
 ; Allow normal users to install the addin into their profile.
 ; This directive also ensures that the uninstall information is
@@ -59,9 +68,9 @@ PrivilegesRequired=lowest
 InternalCompressLevel=max
 SolidCompression=true
 #ifndef DEBUG
-	OutputBaseFilename={#PRODUCT}-{#SEMANTIC_VERSION}
+	OutputBaseFilename={#ADDIN_SHORT_NAME}-{#SEMANTIC_VERSION}
 #else
-	OutputBaseFilename={#PRODUCT}-debug
+	OutputBaseFilename={#ADDIN_SHORT_NAME}-debug
 #endif
 
 #ifdef LICENSE_FILE
@@ -70,7 +79,7 @@ SolidCompression=true
 
 #ifdef INSTALLER_ICO
   SetupIconFile={#SETUPFILESDIR}{#INSTALLER_ICO}
-  UninstallDisplayIcon={#SETUPFILESDIR}{#INSTALLER_ICO}
+  UninstallDisplayIcon={#UNINSTALLDIR}{#INSTALLER_ICO}
 #endif
 
 #ifdef INSTALLER_IMAGE_LARGE

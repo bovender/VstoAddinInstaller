@@ -81,10 +81,10 @@ If you use [Git][] as your version control, you can clone the
 VstoAddinInstaller respository into a submodule of your project 
 repository:
 
-    git submodule add git@github.com:bovender/VstoAddinInstaller
-
-You can then easily update the VstoAddinInstaller module by changing 
-into the directory and issuing
+    git submodule add git@github.com:bovender/VstoAddinInstaller.git
+ 
+You can then easily update the VstoAddinInstaller module by *changing 
+into the directory* and issuing
 
     git pull
 
@@ -150,10 +150,26 @@ For background information on the prerequisites of a VSTO add-in, see
 <http://xltoolbox.net/blog/2015-01-30-net-vsto-add-ins-getting-prerequisites-right.html>.
 
 
-Notice
-------
+Related
+-------
 
-This script is based on the related [ExcelAddinInstaller][].
+This script is based on the related [ExcelAddinInstaller][eai].
+
+
+Versioning
+----------
+
+VstoAddinInstaller is [semantically versioned][semver] using Git tags.
+
+In short: The version number follows the scheme `MAJOR.MINOR.PATCH`.
+
+- An increase in the `MAJOR` version number signifies API-breaking 
+  changes, i.e., if you decide to upgrade, you *must* adjust your local 
+  copy of `make-install.iss`.
+- An increase in the `MINOR` version number denotes new or improved 
+  features. You can upgrade without adjusting your `make-install.iss`.
+- The `PATCH` number is increased with bug fixes. Again, no need to edit 
+  your copy of `make-install.iss`.
 
 
 License
@@ -185,5 +201,7 @@ and/or other countries.
 [Daniel's XL Toolbox]: http://xltoolbox.net
 [ZIP]: https://github.com/bovender/VstoAddinInstaller/archive/master.zip
 [Git]: http://git-scm.com/downloads
+[eai]: https://github.com/bovender/ExcelAddinInstaller
+[semver]: http://semver.org
 
 <!-- vim: set tw=72 ts=4 :-->

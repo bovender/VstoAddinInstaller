@@ -272,7 +272,7 @@ begin
       dir := ExpandConstant('{userappdata}')
     end
   end;
-  result := AddBackslash(dir) + 'Daniel''s XL Toolbox';
+  result := AddBackslash(dir) + '{#ADDIN_SHORT_NAME}';
 end;
 
 { vim: set ft=pascal sw=2 sts=2 et : }

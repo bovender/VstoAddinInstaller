@@ -65,10 +65,13 @@
 ; lest the users of your add-in will have multiple entries
 ; in their software list (Add/Remove Software).
 #define APP_GUID "{{...your UID here...}"
-#define PRODUCT "Name_of_the_addin_without_spaces"
+#define ADDIN_NAME "Name of your add-in"
+#define ADDIN_SHORT_NAME "Short name without special characters"
 #define COMPANY "Your company name"
 #define DESCRIPTION "Describe your add-in in one short sentence."
 #define HOMEPAGE "http://www.example.com"
+#define HOMEPAGE_SUPPORT "http://optional.example.com"
+#define HOMEPAGE_UPDATES "http://optional.example.com"
 
 ; SOURCEDIR is the directory that contains the files that
 ; need to be installed; e.g. 'MyProject\bin\Release\'.
@@ -114,7 +117,7 @@
 ; You can optionally build your VSTO project.
 ; Adjust the paths below for your specific set-up and uncomment the lines.
 ; #define DEVENV "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.com"
-; #define CSPROJ "C:\full\path\to\your\project.csproj"
+; #define CSPROJ "C:\full\path\to\your\solution.sln"
 ; #ifdef DEBUG
 ;   #expr Exec(DEVENV, CSPROJ + " /Build Release")
 ; #else
