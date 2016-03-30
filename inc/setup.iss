@@ -30,6 +30,7 @@ VersionInfoVersion={#FOUR_NUMBER_VERSION}
 VersionInfoTextVersion={#SEMANTIC_VERSION}
 VersionInfoProductName={#ADDIN_NAME}
 VersionInfoProductVersion={#FOUR_NUMBER_VERSION}
+VersionInfoProductTextVersion={#SEMANTIC_VERSION}
 AppPublisherURL={#HOMEPAGE}
 #ifdef HOMEPAGE_SUPPORT
   AppSupportURL={#HOMEPAGE_SUPPORT}
