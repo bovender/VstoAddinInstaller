@@ -43,6 +43,11 @@
 ; The included file adds all files contained in the SOURCEDIR
 Source: {#AddBackslash(SOURCEDIR)}*; DestDir: {app};
 
+; Copy the installer icon, if defined, to the uninstall files dir
+#IFDEF INSTALLER_ICO
+  Source: {#AddBackslash(SETUPFILESDIR)}{#INSTALLER_ICO}; DestDir: {#UNINSTALLDIR};
+#ENDIF
+
 ; Define any additional files in a custom files.iss file.
 #ifexist "files.iss"
   #include "files.iss"

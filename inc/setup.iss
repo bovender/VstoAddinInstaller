@@ -56,7 +56,8 @@ DisableReadyPage=false
 LanguageDetectionMethod=locale
 SetupLogging=true
 TimeStampsInUTC=false
-UninstallFilesDir={app}\uninstall
+#DEFINE UNINSTALLDIR "{app}\uninstall"
+UninstallFilesDir={#UNINSTALLDIR}
 
 ; Allow normal users to install the addin into their profile.
 ; This directive also ensures that the uninstall information is
@@ -78,7 +79,7 @@ SolidCompression=true
 
 #ifdef INSTALLER_ICO
   SetupIconFile={#SETUPFILESDIR}{#INSTALLER_ICO}
-  UninstallDisplayIcon={#SETUPFILESDIR}{#INSTALLER_ICO}
+  UninstallDisplayIcon={#UNINSTALLDIR}{#INSTALLER_ICO}
 #endif
 
 #ifdef INSTALLER_IMAGE_LARGE
