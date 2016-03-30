@@ -31,8 +31,16 @@ VersionInfoVersion={#FOUR_NUMBER_VERSION}
 VersionInfoProductVersion={#SEMANTIC_VERSION}
 VersionInfoTextVersion={#SEMANTIC_VERSION}
 AppPublisherURL={#HOMEPAGE}
-AppSupportURL={#HOMEPAGE}
-AppUpdatesURL={#HOMEPAGE}
+#ifdef HOMEPAGE_SUPPORT
+  AppSupportURL={#HOMEPAGE_SUPPORT}
+#else
+  AppSupportURL={#HOMEPAGE}
+#endif
+#ifdef HOMEPAGE_UPDATES
+  AppUpdatesURL={#HOMEPAGE_UPDATES}
+#else
+  AppUpdatesURL={#HOMEPAGE}
+#endif
 OutputDir={#OUTPUTDIR}
 
 AppendDefaultDirName=false
