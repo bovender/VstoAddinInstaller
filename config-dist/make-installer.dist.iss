@@ -109,7 +109,7 @@
 
 
 ; =====================================================================
-; == DEBUG MODE
+; == BUILD
 
 ; You can optionally build your VSTO project.
 ; Adjust the paths below for your specific set-up and uncomment the lines.
