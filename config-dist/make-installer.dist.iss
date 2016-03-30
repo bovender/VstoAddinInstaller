@@ -117,7 +117,7 @@
 ; You can optionally build your VSTO project.
 ; Adjust the paths below for your specific set-up and uncomment the lines.
 ; #define DEVENV "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.com"
-; #define CSPROJ "C:\full\path\to\your\project.csproj"
+; #define CSPROJ "C:\full\path\to\your\solution.sln"
 ; #ifdef DEBUG
 ;   #expr Exec(DEVENV, CSPROJ + " /Build Release")
 ; #else
