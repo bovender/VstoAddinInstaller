@@ -65,7 +65,8 @@
 ; lest the users of your add-in will have multiple entries
 ; in their software list (Add/Remove Software).
 #define APP_GUID "{{...your UID here...}"
-#define PRODUCT "Name_of_the_addin_without_spaces"
+#define ADDIN_NAME "Name of your add-in"
+#define ADDIN_SHORT_NAME "Short name without special characters"
 #define COMPANY "Your company name"
 #define DESCRIPTION "Describe your add-in in one short sentence."
 #define HOMEPAGE "http://www.example.com"

@@ -19,9 +19,9 @@
 #endif
 
 AppId={#APP_GUID}
-AppName={#PRODUCT}
-VersionInfoProductName={#PRODUCT}
-AppVerName={#PRODUCT} {#SEMANTIC_VERSION}
+AppName={#ADDIN_NAME}
+VersionInfoProductName={#ADDIN_NAME}
+AppVerName={#ADDIN_NAME} {#SEMANTIC_VERSION}
 AppPublisher={#COMPANY}
 VersionInfoCompany={#COMPANY}
 AppCopyright={#PUB_YEARS} {#COMPANY}
@@ -59,9 +59,9 @@ PrivilegesRequired=lowest
 InternalCompressLevel=max
 SolidCompression=true
 #ifndef DEBUG
-	OutputBaseFilename={#PRODUCT}-{#SEMANTIC_VERSION}
+	OutputBaseFilename={#ADDIN_SHORT_NAME}-{#SEMANTIC_VERSION}
 #else
-	OutputBaseFilename={#PRODUCT}-debug
+	OutputBaseFilename={#ADDIN_SHORT_NAME}-debug
 #endif
 
 #ifdef LICENSE_FILE
