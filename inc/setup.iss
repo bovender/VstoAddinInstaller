@@ -20,16 +20,16 @@
 
 AppId={#APP_GUID}
 AppName={#ADDIN_NAME}
-VersionInfoProductName={#ADDIN_NAME}
-AppVerName={#ADDIN_NAME} {#SEMANTIC_VERSION}
+AppVersion={#SEMANTIC_VERSION}
 AppPublisher={#COMPANY}
-VersionInfoCompany={#COMPANY}
 AppCopyright={#PUB_YEARS} {#COMPANY}
+VersionInfoCompany={#COMPANY}
 VersionInfoCopyright={#PUB_YEARS} {#COMPANY}
 VersionInfoDescription={#DESCRIPTION}
 VersionInfoVersion={#FOUR_NUMBER_VERSION}
-VersionInfoProductVersion={#SEMANTIC_VERSION}
 VersionInfoTextVersion={#SEMANTIC_VERSION}
+VersionInfoProductName={#ADDIN_NAME}
+VersionInfoProductVersion={#FOUR_NUMBER_VERSION}
 AppPublisherURL={#HOMEPAGE}
 #ifdef HOMEPAGE_SUPPORT
   AppSupportURL={#HOMEPAGE_SUPPORT}

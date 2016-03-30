@@ -66,7 +66,14 @@
 ; in their software list (Add/Remove Software).
 #define APP_GUID "{{...your UID here...}"
 #define ADDIN_NAME "Name of your add-in"
+
+; The ADDIN_SHORT_NAME is used to generate the installer file
+; name and may also be used as a suggestion for installation
+; directory during system-wide installations. If it is not defined,
+; the value of ADDIN_NAME is used instead. Do not use characters
+; that are illegal in file names.
 #define ADDIN_SHORT_NAME "Short name without special characters"
+
 #define COMPANY "Your company name"
 #define DESCRIPTION "Describe your add-in in one short sentence."
 #define HOMEPAGE "http://www.example.com"
