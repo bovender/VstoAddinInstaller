@@ -275,4 +275,25 @@ begin
   result := AddBackslash(dir) + '{#ADDIN_SHORT_NAME}';
 end;
 
+procedure DeinitializeSetup();
+var
+  e: Integer;
+begin
+  if Length(exePath) > 0 then
+  begin
+    Log('Restarting Office host...');
+    Log(exePath);
+    Exec(exePath, '', '', SW_SHOW, ewNoWait, e);
+  end;
+
+#ifdef LOGFILE
+  {
+    Copy the log file to the installation
+  }
+  FileCopy(
+    ExpandConstant('{log}'),
+    AddBackslash(ExpandConstant('{app}'))+'{#LOGFILE}', false);
+#endif
+end;
+
 { vim: set ft=pascal sw=2 sts=2 et : }

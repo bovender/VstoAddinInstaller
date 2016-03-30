@@ -54,6 +54,7 @@ begin
   }
   while (hWnd <> 0) and not bCancel do
   begin
+    exePath := GetProcessExePath(hWnd);
     if SuppressibleMsgBox(CustomMessage('OfficeIsRunning'), 
         mbConfirmation, MB_OKCANCEL, IDOK) <> IDOK then
     begin
@@ -98,9 +99,8 @@ begin
       After sending the WM_CLOSE message, we need to wait
       a moment to allow the app to shut down; if we did not
       wait, the Setup program would abort if started with /SP- /SILENT.
-      NB: a delay of 500 ms is sufficient.
     }
-    Sleep(500);
+    Sleep(1000);
   end;
   Result := exePath;
 end;

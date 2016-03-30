@@ -40,8 +40,7 @@
 #include <idp.iss>
 
 [Files]
-; The included file adds all files contained in the SOURCEDIR
-Source: {#AddBackslash(SOURCEDIR)}*; DestDir: {app};
+Source: {#AddBackslash(SOURCEDIR)}*; DestDir: {app}; Flags: ignoreversion recursesubdirs
 
 ; Copy the installer icon, if defined, to the uninstall files dir
 #IFDEF INSTALLER_ICO
