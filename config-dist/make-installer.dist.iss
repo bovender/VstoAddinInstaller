@@ -32,18 +32,22 @@
 ;   1. The semantic version (e.g. 2.1.8-beta.3)
 ;   2. The four-number Windows file version (e.g., 2.1.8.3)
 ; Uncomment the line below to define VERSIONFILE, which will make the
-; script read the version information from a text file
-#define VERSIONFILE "VERSION.TXT"
+; script read the version information from a text file.
+; Note: No sanity check is performed; you must make sure the file does
+; contain the two lines with the appropriate information.
+; #define VERSIONFILE "VERSION.TXT"
 
 ; Alternatively, you can indicate the version number directly in this
-; script. The version numbers below will only be used if VERSIONFILE is
-; *not* set.
+; script. The version numbers below are overwritten if VERSIONFILE is
+; set.
 
-; The version number
-#define VERSION "1.0"
+; The version number. It is suggested to use the semantic versionin
+; scheme (http://semver.org), but this is not a must. This version
+; information may contain text.
+#define SEMANTIC_VERSION "1.0"
 
 ; The version in four-number format
-#define LONGVERSION "1.0.0.0"
+#define FOUR_NUMBER_VERSION "1.0.0.0"
 
 ; The year(s) of publication (e.g., "2014-2016")
 #define PUB_YEARS "2016"

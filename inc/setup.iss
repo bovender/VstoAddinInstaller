@@ -13,9 +13,7 @@
   #define SEMANTIC_VERSION FileRead(FILE_HANDLE)
   #define FOUR_NUMBER_VERSION FileRead(FILE_HANDLE)
   #expr FileClose(FILE_HANDLE)
-#pragma message SEMANTIC_VERSION
-#else
-  #define SEMVER {#LONGVERSION}
+  #pragma message SEMANTIC_VERSION
 #endif
 
 AppId={#APP_GUID}
@@ -30,6 +28,7 @@ VersionInfoVersion={#FOUR_NUMBER_VERSION}
 VersionInfoTextVersion={#SEMANTIC_VERSION}
 VersionInfoProductName={#ADDIN_NAME}
 VersionInfoProductVersion={#FOUR_NUMBER_VERSION}
+VersionInfoProductTextVersion={#SEMANTIC_VERSION}
 AppPublisherURL={#HOMEPAGE}
 #ifdef HOMEPAGE_SUPPORT
   AppSupportURL={#HOMEPAGE_SUPPORT}
