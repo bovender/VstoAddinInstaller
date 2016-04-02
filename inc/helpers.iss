@@ -64,8 +64,10 @@ begin
     targetCrumb := 'Excel';
   #elif TARGET_HOST == "word"
     targetCrumb := 'Word';
+  #elif TARGET_HOST == "powerpoint"
+    targetCrumb := 'PowerPoint';
   #else
-    #error TARGET_HOST has a value we cannot handle at this point. Only "excel" and "word" are supported.
+    #error TARGET_HOST has a value we cannot handle at this point. Only "excel", "word", "powerpoint" are supported.
   #endif
   #ifdef REGKEY
     addinCrumb  := '{#REGKEY}';
