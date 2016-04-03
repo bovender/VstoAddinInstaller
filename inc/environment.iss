@@ -19,16 +19,7 @@ var
   lookup1: boolean;
   lookup2: boolean;
 begin
-  #if TARGET_HOST == "excel"
-    key := 'Microsoft\Office\' + IntToStr(version) + '.0\Excel\InstallRoot';
-  #elif TARGET_HOST == "word"
-    key := 'Microsoft\Office\' + IntToStr(version) + '.0\Word\InstallRoot';
-  #elif TARGET_HOST == "powerpoint"
-    key := 'Microsoft\Office\' + IntToStr(version) + '.0\PowerPoint\InstallRoot';
-  #else
-    #error TARGET_HOST has a value we cannot handle at this point. Only "excel", "word", and "powerpoint" are supported.
-  #endif
-
+  key := 'Microsoft\Office\' + IntToStr(version) + '.0\{#TARGET_HOST}\InstallRoot';
   lookup1 := RegKeyExists(HKEY_LOCAL_MACHINE, 'SOFTWARE\' + GetWowNode + key);
   
   {

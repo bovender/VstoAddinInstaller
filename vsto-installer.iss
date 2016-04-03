@@ -11,8 +11,8 @@
   #error You must not run this file directly. Make a copy of config-dist/make-installer.dist.iss, edit it and run it.
 #endif
 
-#if (TARGET_HOST != "excel") && (TARGET_HOST != "word") && (TARGET_HOST != "outlook")
-  #error You must choose between "excel", "word", or "outlook" as target host applications. PowerPoint and others are currently not supported.
+#if (TARGET_HOST != "excel") && (TARGET_HOST != "word") && (TARGET_HOST != "outlook") && (TARGET_HOST != "powerpoint") && (TARGET_HOST != "access")
+  #error You must choose between "excel", "word", "powerpoint", "access", and "outlook" as target host applications. Others are currently not supported.
 #endif
 
 #if !FileExists(AddBackslash(SOURCEDIR) + VSTOFILE)
