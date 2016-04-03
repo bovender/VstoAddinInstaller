@@ -77,23 +77,21 @@ begin
   end
   else
   begin
-    result := True;
-  end;
-
-  for i := 1 to ParamCount do
-  begin
-    if uppercase(ParamStr(i)) = '/UPDATE' then
+    for i := 1 to ParamCount do
     begin
-      Log('/UPDATE switch found');
-      isUpdate := true;
-      exePath := CloseAppNoninteractively();
-      result := true;
-    end
-  end;
+      if uppercase(ParamStr(i)) = '/UPDATE' then
+      begin
+        Log('/UPDATE switch found');
+        isUpdate := true;
+        exePath := CloseAppNoninteractively();
+        result := true;
+      end
+    end;
 
-  if not isUpdate then
-  begin
-    result := CloseAppInteractively();
+    if not isUpdate then
+    begin
+      result := CloseAppInteractively();
+    end;
   end;
 end;
 	
