@@ -8,14 +8,14 @@ InnoSetup Preprocessor (ISPP).
 Features
 --------
 
-- Installs Word and Excel add-ins. (Can be expanded to deal with 
-  add-ins for other Office application fairly easily, but I haven't 
-  had time to do it and test it yet.)
+- Installs Word&reg;, Excel&reg;, PowerPoint&reg;, or Outlook&reg; 
+  add-ins.
 - Downloads and installs .NET and VSTO runtimes if needed.
-- Checks if Excel or Word is running and can automatically shut it 
-  down before proceeding with the installation process.
+- Checks if the target application is currently running and can 
+  automatically shut it down before proceeding with the installation 
+  process.
 - Can be used with an `/UPDATE` switch to silently shut down and 
-  restart Excel or Word after the installation.
+  restart the target application after the installation.
 - Modular structure makes it easy to keep custom configuration 
   separate from the core functionality.
 
@@ -134,13 +134,11 @@ this capability, but have not yet have the time to implement it.
 Demos
 -----
 
-Two demo projects are contained in this repository in the `demo` 
-directory, one for an Excel add-in and one for a Word add-in (2010 or 
-newer).
+Demo projects are contained in the [demo](demo/) directory.
 
 In order to try out these demo installers, you must first build the 
-projects in Visual Studio. The binaries are not contained in this 
-repository.
+corresponding projects in Visual Studio. The binaries are not contained 
+in this repository!
 
 
 Further information
@@ -191,10 +189,9 @@ Published under the [Apache License, Version 2.0](LICENSE).
         See the License for the specific language governing permissions and
         limitations under the License.
 
-Microsoft®, Windows®, Office, and Excel® are either registered
-trademarks or trademarks of Microsoft Corporation in the United States
-and/or other countries.
-
+Microsoft®, Windows®, Office, and Excel&reg;, PowerPoint&reg;, and 
+Outlook&reg; are either registered trademarks or trademarks of Microsoft 
+Corporation in the United States and/or other countries.  
 
 [InnoSetup]: http://www.jrsoftware.org/isinfo.php
 [isdp]: http://mitrichsoftware.wordpress.com 

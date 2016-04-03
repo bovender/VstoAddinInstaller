@@ -60,19 +60,12 @@ var
   targetCrumb: string;
   addinCrumb: string;
 begin
-  #if TARGET_HOST == "excel"
-    targetCrumb := 'Excel';
-  #elif TARGET_HOST == "word"
-    targetCrumb := 'Word';
-  #else
-    #error TARGET_HOST has a value we cannot handle at this point. Only "excel" and "word" are supported.
-  #endif
   #ifdef REGKEY
-    addinCrumb  := '{#REGKEY}';
+    addinCrumb := '{#REGKEY}';
   #else
     addinCrumb := '{#APP_GUID}';
   #endif
-  result := 'Software\Microsoft\Office\' + targetCrumb + '\Addins\' + addinCrumb;
+  result := 'Software\Microsoft\Office\{#TARGET_HOST}\Addins\' + addinCrumb;
 end;
 
 {
