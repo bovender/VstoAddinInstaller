@@ -61,8 +61,8 @@ var
   isUpdate: boolean;
 begin
   {
-    Determine if Excel 2007 or newer is installed (absolute requirement
-    for this VSTO add-in). Excel 2007 ist version 12.0.
+    Determine if Office 2007 or newer is installed (absolute requirement
+    for this VSTO add-in). Office 2007 ist version 12.0.
   }
   for i := 12 to MAX_VERSION do
   begin

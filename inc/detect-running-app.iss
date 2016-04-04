@@ -50,7 +50,7 @@ begin
   hWnd := FindWindowByClassName(OfficeWindowName());
 
   {
-    If Excel is running, hWnd is different from 0.
+    If Office is running, hWnd is different from 0.
   }
   while (hWnd <> 0) and not bCancel do
   begin
