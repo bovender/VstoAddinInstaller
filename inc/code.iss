@@ -294,4 +294,8 @@ begin
 #endif
 end;
 
+#ifexist "code.iss"
+  #include "code.iss"
+#endif
+
 { vim: set ft=pascal sw=2 sts=2 et : }
