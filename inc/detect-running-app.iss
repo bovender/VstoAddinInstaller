@@ -1,6 +1,6 @@
 {
 =====================================================================
-== inc/detect-running-app.iss
+== inc\detect-running-app.iss
 == Determine the name of the Office application's main window.
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)
@@ -50,7 +50,7 @@ begin
   hWnd := FindWindowByClassName(OfficeWindowName());
 
   {
-    If Excel is running, hWnd is different from 0.
+    If Office is running, hWnd is different from 0.
   }
   while (hWnd <> 0) and not bCancel do
   begin

@@ -1,5 +1,5 @@
 ; =====================================================================
-; == inc/setup.iss
+; == inc\setup.iss
 ; == Part of VstoAddinInstaller
 ; == (https://github.com/bovender/VstoAddinInstaller)
 ; == (c) 2016 Daniel Kraus <bovender@bovender.de>

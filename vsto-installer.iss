@@ -32,8 +32,8 @@
 
 
 [Setup]
-#include "inc/defines.iss"
-#include "inc/setup.iss"
+#include "inc\defines.iss"
+#include "inc\setup.iss"
 	
 ; Inno Downloader Plugin is required for this
 ; NB: this directive MUST be located at the end of the [setup] section
@@ -48,39 +48,39 @@ Source: {#AddBackslash(SOURCEDIR)}*; DestDir: {app}; Flags: ignoreversion recurs
 #ENDIF
 
 ; Define any additional files in a custom files.iss file.
-#ifexist "files.iss"
-  #include "files.iss"
+#ifexist "custom-files.iss"
+  #include "..\custom-files.iss"
 #endif
 
 [Registry]
-#include "inc/registry.iss"
+#include "inc\registry.iss"
 
 [Tasks]
 ; Define any tasks in the custom tasks.iss file.
-#ifexist "tasks.iss"
-  #include "tasks.iss"
+#ifexist "custom-tasks.iss"
+  #include "..\custom-tasks.iss"
 #endif
 
 [Code]
-#include "inc/code.iss"
+#include "inc\code.pas"
 
-#ifexist "code.iss"
-  #include "code.iss"
+#ifexist "custom-code.pas"
+  #include "..\custom-code.pas"
 #endif
 
 [Languages]
 Name: en; MessagesFile: compiler:Default.isl; 
 Name: de; MessagesFile: compiler:Languages\German.isl; 
-#ifexist "languages.iss"
-  #include "languages.iss"
+#ifexist "custom-languages.iss"
+  #include "..\custom-languages.iss"
 #endif
 
 [CustomMessages]
-#include "inc/messages.iss"
+#include "inc\messages.iss"
 
 ; Define any additional messages in the custom messages.iss file.
-#ifexist "messages.iss"
-  #include "messages.iss"
+#ifexist "custom-messages.iss"
+  #include "..\custom-messages.iss"
 #endif
 
 ; vim: ts=2 sts=2 sw=2 et cms=;%s 

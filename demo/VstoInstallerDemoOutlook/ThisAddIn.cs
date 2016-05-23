@@ -18,7 +18,7 @@ namespace VstoInstallerDemoOutlook
                 Properties.Settings.Default.FirstRun = false;
                 Properties.Settings.Default.Save();
                 MessageBox.Show(
-                    "The VstoAddinInstaller demo add-in for Excel was successfully installed.\n" +
+                    "The VstoAddinInstaller demo add-in for Outlook was successfully installed.\n" +
                     "This message will not be shown again.\n" +
                     "You can uninstall the add-in now.",
                     "VstoAddinInstaller Demo Add-in",

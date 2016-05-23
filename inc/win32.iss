@@ -1,6 +1,6 @@
 {
 =====================================================================
-== inc/win32.iss
+== inc\win32.iss
 == Win32 API support functions
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)
@@ -35,7 +35,7 @@ external 'QueryDosDeviceA@kernel32.dll stdcall delayload setuponly';
 {
 	Identifies the process that owns hWnd and returns the
 	executable path that belongs to it. We need this to be
-	able to close Excel and automatically restart it after
+	able to close Office and automatically restart it after
 	setup has completed.
 }
 function GetProcessExePath(hWnd: LongInt): string;

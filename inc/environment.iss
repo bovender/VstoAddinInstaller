@@ -1,6 +1,6 @@
 {
 =====================================================================
-== inc/environment.iss
+== inc\environment.iss
 == Functions to detect Office environment
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)
