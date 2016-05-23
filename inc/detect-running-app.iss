@@ -1,6 +1,6 @@
 {
 =====================================================================
-== inc/detect-running-app.iss
+== inc\detect-running-app.iss
 == Determine the name of the Office application's main window.
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)

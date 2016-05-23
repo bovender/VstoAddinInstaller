@@ -1,5 +1,5 @@
 ; =====================================================================
-; == inc/defines.iss
+; == inc\defines.iss
 ; == Additional defines
 ; == Part of VstoAddinInstaller
 ; == (https://github.com/bovender/VstoAddinInstaller)

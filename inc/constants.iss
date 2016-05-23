@@ -1,6 +1,6 @@
 {
 =====================================================================
-== inc/constants.iss
+== inc\constants.iss
 == Global constants
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)

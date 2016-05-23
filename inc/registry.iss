@@ -1,5 +1,5 @@
 ; =====================================================================
-; == inc/registry.iss
+; == inc\registry.iss
 ; == Registry keys section
 ; == Part of VstoAddinInstaller
 ; == (https://github.com/bovender/VstoAddinInstaller)

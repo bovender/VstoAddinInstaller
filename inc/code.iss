@@ -1,6 +1,6 @@
 {
 =====================================================================
-== inc/code.iss
+== inc\code.iss
 == Pascal/RemObjects code section
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)
@@ -293,9 +293,5 @@ begin
     AddBackslash(ExpandConstant('{app}'))+'{#LOGFILE}', false);
 #endif
 end;
-
-#ifexist "code.iss"
-  #include "code.iss"
-#endif
 
 { vim: set ft=pascal sw=2 sts=2 et : }

@@ -1,6 +1,6 @@
 {
 =====================================================================
-== inc/runtimes.iss
+== inc\runtimes.iss
 == Check, download and install additional runtime files
 == (.NET runtime, VSTO 4.0 runtime).
 == Create additonal wizard pages

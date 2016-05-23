@@ -1,6 +1,6 @@
 {
 =====================================================================
-== inc/helpers.iss
+== inc\helpers.iss
 == Helper functions
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)

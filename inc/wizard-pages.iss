@@ -1,6 +1,6 @@
 {
 =====================================================================
-== inc/wizard-pages.iss
+== inc\wizard-pages.iss
 == Create additonal wizard pages
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)

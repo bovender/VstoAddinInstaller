@@ -1,6 +1,6 @@
 {
 =====================================================================
-== inc/win32.iss
+== inc\win32.iss
 == Win32 API support functions
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)
