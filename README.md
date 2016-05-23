@@ -195,7 +195,7 @@ Corporation in the United States and/or other countries.
 
 [InnoSetup]: http://www.jrsoftware.org/isinfo.php
 [isdp]: http://mitrichsoftware.wordpress.com 
-[Daniel's XL Toolbox]: http://xltoolbox.net
+[Daniel's XL Toolbox]: https://www.xltoolbox.net
 [ZIP]: https://github.com/bovender/VstoAddinInstaller/archive/master.zip
 [Git]: http://git-scm.com/downloads
 [eai]: https://github.com/bovender/ExcelAddinInstaller
