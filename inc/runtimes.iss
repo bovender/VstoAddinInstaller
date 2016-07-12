@@ -13,22 +13,45 @@
 }
 
 {
-  Checks if the VSTO runtime is installed. This is relevant if only
-  Office 2007 is installed. Since Office 2010, the CLR is
-  automatically included.
-  The presence of the VSTO runtime is indicated by the presence one of
-  four possible registry keys.
+  Checks if the VSTO runtime is installed.
   See: http://xltoolbox.sf.net/blog/2015/01/net-vsto-add-ins-getting-prerequisites-right
   HKLM\SOFTWARE\Microsoft\VSTO Runtime Setup\v4R (32-bit)
   HKLM\SOFTWARE\Wow6432Node\Microsoft\VSTO Runtime Setup\v4R (64-bit)
+  The 'R' suffix need not be present.
 }
 function IsVstorInstalled(): boolean;
 var
-  software, vstorPath: string;
+  vstorPath: string;
 begin
-  software := 'SOFTWARE\';
-  vstorPath := 'Microsoft\VSTO Runtime Setup\v4R';
-  result := RegKeyExists(HKEY_LOCAL_MACHINE, software + GetWowNode + vstorPath);
+  vstorPath := 'SOFTWARE\' + GetWowNode + 'Microsoft\VSTO Runtime Setup\v4';
+  result := RegKeyExists(HKEY_LOCAL_MACHINE, vstorPath) or
+            RegKeyExists(HKEY_LOCAL_MACHINE, vstorPath + 'R');
+  if result then
+    Log('IsVstorInstalled: VSTO Runtime is installed')
+  else
+    Log('IsVstorInstalled: VSTO Runtime is not installed');
+end;
+
+{
+  Extracts the build number from the VSTO runtime version string
+  that is stored in the registry.
+}
+function GetVstorBuild(): integer;
+var
+  vstorPath: string;
+  version: string;
+begin
+  vstorPath := 'SOFTWARE\' + GetWowNode + 'Microsoft\VSTO Runtime Setup\v4';
+  version := '00.0.00000';
+  if not RegQueryStringValue(HKEY_LOCAL_MACHINE, vstorPath + 'R', 'Version', version) then
+  begin
+    { Check again without the R suffix. }
+    Log('GetVstorBuild: Attempting v4 key');
+    RegQueryStringValue(HKEY_LOCAL_MACHINE, vstorPath, 'Version', version)
+  end;
+  Log('GetVstorBuild: Version: ' + version);
+  result := StrToIntDef(Copy(s, 5, 5);
+  Log('GetVstorBuild: Build:   ' + IntToStr(build));
 end;
 
 {
@@ -52,9 +75,14 @@ end;
 }
 function NeedToInstallVstor(): boolean;
 begin
-  result := false; { Default for Office 2010 SP1 or newer }
-  if IsOffice2007Installed or IsOffice2010NoSpInstalled then
-    result := not IsVstorInstalled;
+  Log('NeedToInstallVstor: Minimum required VSTOR 2010 build: ' + IntToStr(MIN_VSTOR_BUILD));
+  result := false; { Default }
+  if IsOffice2007Installed or IsOffice2010Installed then
+    result := GetVstorBuild < MIN_VSTOR_BUILD;
+  if result then
+    Log('NeedToInstallVstor: Need to install VSTO runtime')
+  else
+    Log('NeedToInstallVstor: No need to install VSTO runtime');
 end;
 
 {

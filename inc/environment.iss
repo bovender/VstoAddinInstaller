@@ -109,6 +109,16 @@ begin
   if result then Log('Detected Office 2007.');
 end;
 
+
+{
+  Asserts if Office 2010 is installed.
+}
+function IsOffice2010Installed(): boolean;
+begin
+  result := IsHostVersionInstalled(14);
+  if result then Log('Detected Office 2010.');
+end;
+
 {
   Asserts if Office 2010 without service pack is installed.
   For build number, see http://support.microsoft.com/kb/2121559/en-us
