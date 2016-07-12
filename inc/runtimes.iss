@@ -50,7 +50,7 @@ begin
     RegQueryStringValue(HKEY_LOCAL_MACHINE, vstorPath, 'Version', version)
   end;
   Log('GetVstorBuild: Version: ' + version);
-  result := StrToIntDef(Copy(s, 5, 5);
+  result := StrToIntDef(Copy(version, 5, 5);
   Log('GetVstorBuild: Build:   ' + IntToStr(build));
 end;
 
