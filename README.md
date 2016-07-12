@@ -1,3 +1,4 @@
+[![Beerpay](https://beerpay.io/bovender/VstoAddinInstaller/badge.svg?style=flat-square)](https://beerpay.io/bovender/VstoAddinInstaller)
 VstoAddinInstaller
 ===================
 
