@@ -25,10 +25,10 @@ Check: IsMultiUserInstall; ValueName: Warmup; ValueData: 1; ValueType: dword; Ro
 Check: IsMultiUserInstall; ValueName: Manifest; ValueData: file:///{code:ConvertSlash|{app}}/{#VSTOFILE}|vstolocal; ValueType: string; Root: HKLM32; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
 
 ; Same keys again, this time for multi-user install (HKLM64)
-Check: IsMultiUserInstall IsWin64; ValueName: Description; ValueData: {#DESCRIPTION}; ValueType: string; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
-Check: IsMultiUserInstall IsWin64; ValueName: FriendlyName; ValueData: {#ADDIN_NAME}; ValueType: string; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
-Check: IsMultiUserInstall IsWin64; ValueName: LoadBehavior; ValueData: 3; ValueType: dword; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
-Check: IsMultiUserInstall IsWin64; ValueName: Warmup; ValueData: 1; ValueType: dword; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
-Check: IsMultiUserInstall IsWin64; ValueName: Manifest; ValueData: file:///{code:ConvertSlash|{app}}/{#VSTOFILE}|vstolocal; ValueType: string; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
+Check: IsMultiUserInstall and IsWin64; ValueName: Description; ValueData: {#DESCRIPTION}; ValueType: string; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
+Check: IsMultiUserInstall and IsWin64; ValueName: FriendlyName; ValueData: {#ADDIN_NAME}; ValueType: string; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
+Check: IsMultiUserInstall and IsWin64; ValueName: LoadBehavior; ValueData: 3; ValueType: dword; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
+Check: IsMultiUserInstall and IsWin64; ValueName: Warmup; ValueData: 1; ValueType: dword; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
+Check: IsMultiUserInstall and IsWin64; ValueName: Manifest; ValueData: file:///{code:ConvertSlash|{app}}/{#VSTOFILE}|vstolocal; ValueType: string; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
 
 ; vim: nowrap
