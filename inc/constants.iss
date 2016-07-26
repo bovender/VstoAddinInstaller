@@ -14,6 +14,6 @@ const
   WM_CLOSE = $10;
   MAX_PATH = 250;
   MAX_VERSION = 24; //< highest Office version number to check for.
-  MIN_VSTOR_BUILD = 50903; //< minimum required build of VSTO runtime 2010.
+  MIN_VSTOR_BUILD = 40305; //< minimum required build of VSTO runtime 2010.
 
 { vim: set ft=pascal sw=2 sts=2 et : }
