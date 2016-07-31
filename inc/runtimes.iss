@@ -40,6 +40,7 @@ function GetVstorBuild(): integer;
 var
   vstorPath: string;
   version: string;
+  build: string;
 begin
   vstorPath := 'SOFTWARE\' + GetWowNode + 'Microsoft\VSTO Runtime Setup\v4';
   version := '00.0.00000';
@@ -49,9 +50,11 @@ begin
     Log('GetVstorBuild: Attempting v4 key');
     RegQueryStringValue(HKEY_LOCAL_MACHINE, vstorPath, 'Version', version)
   end;
-  Log('GetVstorBuild: Version: ' + version);
-  result := StrToIntDef(Copy(version, 5, 5), 0);
-  Log('GetVstorBuild: Build:   ' + IntToStr(result));
+  Log('GetVstorBuild: Version:   ' + version);
+  build := Copy(version, 6, 5);
+  Log('GetVstorBuild: Build str: ' + build);
+  result := StrToIntDef(build, 0);
+  Log('GetVstorBuild: Build:     ' + IntToStr(result));
 end;
 
 {
