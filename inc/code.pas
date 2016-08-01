@@ -18,6 +18,7 @@ var
   prerequisitesChecked: boolean;
   prerequisitesMet: boolean;
   exePath: string;
+  IsUpdate: boolean;
 
 
 #include "constants.iss"
@@ -58,7 +59,6 @@ function InitializeSetup(): boolean;
 var
   i: integer;
   minVersionInstalled: boolean;
-  isUpdate: boolean;
 begin
   {
     Determine if Office 2007 or newer is installed (absolute requirement
@@ -82,13 +82,13 @@ begin
       if uppercase(ParamStr(i)) = '/UPDATE' then
       begin
         Log('/UPDATE switch found');
-        isUpdate := true;
+        IsUpdate := true;
         exePath := CloseAppNoninteractively();
         result := true;
       end
     end;
 
-    if not isUpdate then
+    if not IsUpdate then
     begin
       result := CloseAppInteractively();
     end;
