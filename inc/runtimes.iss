@@ -68,6 +68,16 @@ begin
 end;
 
 {
+  Indicates whether or not the .NET runtime needs to be installed;
+  this takes into account whether the installer runs with the
+  /UPDATE switch or not.
+}
+function NeedToInstallDotNetRuntime(): boolean;
+begin
+  result := not IsNetInstalled and not IsUpdate;
+end;
+
+{
   Asserts if the VSTO runtime for .NET 4.0 redistributable needs to be
   downloaded and installed.
   If Office 2010 SP 1 or newer is installed on the system, the VSTOR runtime
@@ -81,7 +91,7 @@ begin
   Log('NeedToInstallVstor: Minimum required VSTOR 2010 build: ' + IntToStr(MIN_VSTOR_BUILD));
   result := false; { Default }
   if IsOffice2007Installed or IsOffice2010Installed then
-    result := GetVstorBuild < MIN_VSTOR_BUILD;
+    result := (GetVstorBuild < MIN_VSTOR_BUILD) and not IsUpdate;
   if result then
     Log('NeedToInstallVstor: Need to install VSTO runtime')
   else
@@ -97,7 +107,7 @@ begin
   { Cache check result to avoid multiple registry lookups and log messages }
   if not prerequisitesChecked then
   begin
-    prerequisitesMet := IsNetInstalled and not NeedToInstallVstor;
+    prerequisitesMet := not NeedToInstallDotNetRuntime and not NeedToInstallVstor;
     prerequisitesChecked := true;
   end;
   result := prerequisitesMet;
@@ -154,7 +164,7 @@ end;
 }
 function NeedToDownloadNet: boolean;
 begin
-  result := not IsNetInstalled and not IsNetDownloaded;
+  result := NeedToInstallDotNetRuntime and not IsNetDownloaded;
 end;
 
 function ExecuteNetSetup(): boolean;
@@ -162,7 +172,7 @@ var
   exitCode: integer;
 begin
   result := true;
-  if not IsNetInstalled then
+  if NeedToInstallDotNetRuntime then
   begin
     if IsNetDownloaded then
     begin
@@ -182,7 +192,7 @@ begin
       MsgBox(CustomMessage('DownloadNotValidated'), mbInformation, MB_OK);
       result := False;
     end;
-  end; { not IsNetInstalled }
+  end; { NeedToInstallDotNetRuntime }
 end;
 
 function ExecuteVstorSetup(): boolean;
