@@ -42,7 +42,6 @@ end;
 }
 function CloseAppInteractively(): boolean;
 var
-  i: LongInt;
   hWnd: LongInt;
   bCancel: boolean;
 begin

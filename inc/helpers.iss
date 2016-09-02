@@ -57,7 +57,6 @@ end;
 }
 function GetRegKey(param: string): string;
 var
-  targetCrumb: string;
   addinCrumb: string;
 begin
   #ifdef REGKEY
