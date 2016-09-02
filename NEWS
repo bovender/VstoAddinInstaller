@@ -1,4 +1,13 @@
-Version 1.3.4 (2016-09-02)
+Version 1.3.5 (2016-09-02)
+------------------------------------------------------------------------
+
+- FIX: Properly delete Warmup registry key.
+- FIX: Syntax error resulting in failing compilation.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.3.2 (2016-09-02)
 ------------------------------------------------------------------------
 
 - FIX: Do not create 'Warmup' registry values during installation and remove existing ones when updating in an effort to prevent random freezes in Office applications.

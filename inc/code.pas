@@ -292,6 +292,7 @@ begin
     FileCopy(
       ExpandConstant('{log}'),
       AddBackslash(ExpandConstant('{app}'))+'{#LOGFILE}', false);
+  except
   end
 #endif
 end;
