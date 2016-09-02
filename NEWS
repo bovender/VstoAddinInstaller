@@ -1,0 +1,126 @@
+Version 1.3.4 (2016-09-02)
+------------------------------------------------------------------------
+
+- FIX: Do not create 'Warmup' registry values during installation and remove existing ones when updating in an effort to prevent random freezes in Office applications.
+- FIX: Suppress the error message "An attempt was made to expand the 'app' constant before it was initialized" when the installation is aborted.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.3.3 (2016-08-01)
+------------------------------------------------------------------------
+
+- IMPROVEMENT: If the installer is executed with the /UPDATE switch, the check for additional runtime files is skipped (to minimize the risk of side effects).
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.3.2 (2016-08-01)
+------------------------------------------------------------------------
+
+- FIX: Adjusted minimum VSTO runtime build to 40305.
+- FIX: Properly extract build number form VSTO runtime version string.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.3.1 (2016-07-13)
+------------------------------------------------------------------------
+
+- FIX: When installing system-wide, the add-in was not registered properly for certain 32-bit/64-bit combinations.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.3.0 (2016-07-12)
+------------------------------------------------------------------------
+
+- IMPROVEMENT: The decision to download the VSTO runtime is now made on the basis of a currently installed version.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.2.0 (2016-05-23)
+------------------------------------------------------------------------
+
+- FIX: Change line endings to Windows style (CR+LF).
+- FIX: Change slashes to backslashes (cosmetic).
+- FIX: Change wording in Outlook demo's success message.
+- IMPROVEMENT: Customizable files are now prefixed with "custom-" in order to help distinguish them from bundled include files.
+- NEW: Added ability to add additional code (per custom-code.dist.pas file).
+- NEW: Added ability to add additional code (per code.dist.iss file).
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.1.0 (2016-04-03)
+------------------------------------------------------------------------
+
+- FIX: Cancel installation if the target host application is not present on the system.
+- NEW: Support for PowerPoint and Outlook add-ins.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.0.3 (2016-03-30)
+------------------------------------------------------------------------
+
+- FIX: Host application was not restarted after installation.
+- FIX: Include subdirectories of the source directory.
+- FIX: Log file was not copied to the requested destination.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.0.2 (2016-03-30)
+------------------------------------------------------------------------
+
+- FIX: Version information was not set correctly if a version.txt file was *not* used.
+- IMPROVEMENT: Set VersionInfoProductTextVersion to the textual version.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.0.1 (2016-03-30)
+------------------------------------------------------------------------
+
+- FIX: Use appropriate version numbers and version strings.
+- IMPROVEMENT: Add comment to explain how ADDIN_SHORT_NAME is used.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.0.0 (2016-03-30)
+------------------------------------------------------------------------
+
+First version without major flaws.
+- FIX: Added missing files.dist.iss example file.
+- FIX: Uninstaller icon was not copied during installation.
+- IMPROVED: Use ADDIN_NAME as the default value for ADDIN_SHORT_NAME; note however that ADDIN_SHORT_NAME may be used as a directory name and therefore must not contain illegal characters.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 0.1.2 (2016-03-30)
+------------------------------------------------------------------------
+
+- FIX: A few comments/explanations.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 0.1.1 (2016-03-29)
+------------------------------------------------------------------------
+
+- FIX: Use correct VersionInfoDescription.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 0.1.0 (2016-03-29)
+------------------------------------------------------------------------
+
+First published version on the master branch.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
