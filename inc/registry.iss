@@ -14,21 +14,21 @@ ValueName: EnableVSTOLocalUNC; ValueData: 1; ValueType: dword; Root: HKLM; Subke
 Check: not IsMultiUserInstall; ValueName: Description; ValueData: {#DESCRIPTION}; ValueType: string; Root: HKCU; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
 Check: not IsMultiUserInstall; ValueName: FriendlyName; ValueData: {#ADDIN_NAME}; ValueType: string; Root: HKCU; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
 Check: not IsMultiUserInstall; ValueName: LoadBehavior; ValueData: 3; ValueType: dword; Root: HKCU; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
-Check: not IsMultiUserInstall; ValueName: Warmup; ValueType: none; Root: HKCU; Subkey: {code:GetRegKey}; Flags: deletekey noerror
+Check: not IsMultiUserInstall; ValueName: Warmup; ValueType: none; Root: HKCU; Subkey: {code:GetRegKey}; Flags: deletevalue noerror
 Check: not IsMultiUserInstall; ValueName: Manifest; ValueData: file:///{code:ConvertSlash|{app}}/{#VSTOFILE}|vstolocal; ValueType: string; Root: HKCU; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
 
 ; Same keys again, this time for multi-user install (HKLM32)
 Check: IsMultiUserInstall; ValueName: Description; ValueData: {#DESCRIPTION}; ValueType: string; Root: HKLM32; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
 Check: IsMultiUserInstall; ValueName: FriendlyName; ValueData: {#ADDIN_NAME}; ValueType: string; Root: HKLM32; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
 Check: IsMultiUserInstall; ValueName: LoadBehavior; ValueData: 3; ValueType: dword; Root: HKLM32; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
-Check: IsMultiUserInstall; ValueName: Warmup; ValueType: none; Root: HKLM32; Subkey: {code:GetRegKey}; Flags: deletekey noerror
+Check: IsMultiUserInstall; ValueName: Warmup; ValueType: none; Root: HKLM32; Subkey: {code:GetRegKey}; Flags: deletevalue noerror
 Check: IsMultiUserInstall; ValueName: Manifest; ValueData: file:///{code:ConvertSlash|{app}}/{#VSTOFILE}|vstolocal; ValueType: string; Root: HKLM32; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
 
 ; Same keys again, this time for multi-user install (HKLM64)
 Check: IsMultiUserInstall and IsWin64; ValueName: Description; ValueData: {#DESCRIPTION}; ValueType: string; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
 Check: IsMultiUserInstall and IsWin64; ValueName: FriendlyName; ValueData: {#ADDIN_NAME}; ValueType: string; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
 Check: IsMultiUserInstall and IsWin64; ValueName: LoadBehavior; ValueData: 3; ValueType: dword; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
-Check: IsMultiUserInstall and IsWin64; ValueName: Warmup; ValueType: none; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: deletekey noerror
+Check: IsMultiUserInstall and IsWin64; ValueName: Warmup; ValueType: none; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: deletevalue noerror
 Check: IsMultiUserInstall and IsWin64; ValueName: Manifest; ValueData: file:///{code:ConvertSlash|{app}}/{#VSTOFILE}|vstolocal; ValueType: string; Root: HKLM64; Subkey: {code:GetRegKey}; Flags: uninsdeletekey
 
 ; vim: nowrap
