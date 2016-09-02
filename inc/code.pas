@@ -288,9 +288,11 @@ begin
   {
     Copy the log file to the installation
   }
-  FileCopy(
-    ExpandConstant('{log}'),
-    AddBackslash(ExpandConstant('{app}'))+'{#LOGFILE}', false);
+  try
+    FileCopy(
+      ExpandConstant('{log}'),
+      AddBackslash(ExpandConstant('{app}'))+'{#LOGFILE}', false);
+  end
 #endif
 end;
 
