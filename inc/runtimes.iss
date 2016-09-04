@@ -43,18 +43,28 @@ var
   build: string;
 begin
   vstorPath := 'SOFTWARE\' + GetWowNode + 'Microsoft\VSTO Runtime Setup\v4';
-  version := '00.0.00000';
   if not RegQueryStringValue(HKEY_LOCAL_MACHINE, vstorPath + 'R', 'Version', version) then
   begin
     { Check again without the R suffix. }
-    Log('GetVstorBuild: Attempting v4 key');
-    RegQueryStringValue(HKEY_LOCAL_MACHINE, vstorPath, 'Version', version)
+    Log('GetVstorBuild: v4R key not found, attempting v4 key');
+    if not RegQueryStringValue(HKEY_LOCAL_MACHINE, vstorPath, 'Version', version) then
+    begin
+      Log('GetVstorBuild: v4 key not found either!');
+    end
   end;
-  Log('GetVstorBuild: Version:   ' + version);
-  build := Copy(version, 6, 5);
-  Log('GetVstorBuild: Build str: ' + build);
-  result := StrToIntDef(build, 0);
-  Log('GetVstorBuild: Build:     ' + IntToStr(result));
+  if Length(version) > 0 then
+  begin
+    Log('GetVstorBuild: Version:   ' + version);
+    build := Copy(version, 6, 5);
+    Log('GetVstorBuild: Build str: ' + build);
+    result := StrToIntDef(build, 0);
+    Log('GetVstorBuild: Build:     ' + IntToStr(result));
+  end
+  else
+  begin
+    Log('GetVstorBuild: Runtime not detected, returning build number 0');
+    result := 0;
+  end
 end;
 
 {
