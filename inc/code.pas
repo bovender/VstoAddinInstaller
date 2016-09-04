@@ -105,12 +105,12 @@ begin
     if NeedToDownloadNet then
     begin
       Log('Mark {#DOTNETURL} for download.');
-      idpAddFileSize('{#DOTNETURL}', GetNetInstallerPath, 50449456);
+      idpAddFileSize('{#DOTNETURL}', GetNetInstallerPath, {#DOTNETSIZE});
     end;
     if NeedToDownloadVstor then
     begin
       Log('Mark {#VSTORURL} for download.');
-      idpAddFileSize('{#VSTORURL}', GetVstorInstallerPath, 40123576);
+      idpAddFileSize('{#VSTORURL}', GetVstorInstallerPath, {#VSTORSIZE});
     end;
     CreateDownloadInfoPage;
     CreateInstallInfoPage;
