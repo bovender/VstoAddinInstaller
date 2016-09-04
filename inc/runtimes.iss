@@ -186,21 +186,22 @@ begin
   begin
     if IsNetDownloaded then
     begin
-      Log('Valid .NET runtime download found, installing.');
+      Log('NeedToInstallDotNetRuntime: Valid .NET runtime download found, installing.');
       Exec(GetNetInstallerPath, '/norestart',
         '', SW_SHOW, ewWaitUntilTerminated, exitCode);
       BringToFrontAndRestore;
       if not IsNetInstalled then
       begin
+        Log('NeedToInstallDotNetRuntime: .NET runtime still not installed, warning user.');
         MsgBox(CustomMessage('StillNotInstalled'), mbInformation, MB_OK);
-        result := False;
+        result := True;
       end;
     end
     else
     begin
-      Log('No or invalid .NET runtime download found, will not install.');
+      Log('NeedToInstallDotNetRuntime: No or invalid .NET runtime download found, warning user.');
       MsgBox(CustomMessage('DownloadNotValidated'), mbInformation, MB_OK);
-      result := False;
+      result := True;
     end;
   end; { NeedToInstallDotNetRuntime }
 end;
@@ -214,21 +215,22 @@ begin
   begin
     if IsVstorDownloaded then
     begin
-      Log('Valid VSTO runtime download found, installing.');
+      Log('ExecuteVstorSetup: Valid VSTO runtime download found, installing.');
       Exec(GetVstorInstallerPath, '/norestart', '', SW_SHOW,
         ewWaitUntilTerminated, exitCode);
       BringToFrontAndRestore;
       if not IsVstorInstalled then
       begin
+        Log('ExecuteVstorSetup: VSTO runtime still not installed, warning user.');
         MsgBox(CustomMessage('StillNotInstalled'), mbInformation, MB_OK);
-        result := False;
+        result := True;
       end;
     end
     else
     begin
-      Log('No or invalid VSTO runtime download found, will not install.');
+      Log('ExecuteVstorSetup: No or invalid VSTO runtime download found, warning user.');
       MsgBox(CustomMessage('DownloadNotValidated'), mbInformation, MB_OK);
-      result := False;
+      result := True;
     end;
   end; { not IsVstorInstalled }
 end;
