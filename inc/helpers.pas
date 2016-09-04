@@ -37,7 +37,7 @@ begin
     else
     begin
       Log('IsFileValid: File not found!');
-    end
+    end;
   finally
     result := actualSha1 = expectedSha1;
     if result then
