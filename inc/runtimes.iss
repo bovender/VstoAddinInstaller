@@ -128,7 +128,7 @@ end;
 }
 function GetVstorInstallerPath(): string;
 begin
-  result := ExpandConstant('{%temp}\vstor_redist_40.exe');
+  result := ExpandConstant('{%temp}\vstor_redist.exe');
 end;
 
 {
