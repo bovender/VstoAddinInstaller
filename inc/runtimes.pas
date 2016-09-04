@@ -42,19 +42,30 @@ var
   version: string;
   build: string;
 begin
-  vstorPath := 'SOFTWARE\' + GetWowNode + 'Microsoft\VSTO Runtime Setup\v4';
-  version := '00.0.00000';
-  if not RegQueryStringValue(HKEY_LOCAL_MACHINE, vstorPath + 'R', 'Version', version) then
+  vstorPath := 'SOFTWARE\' + GetWowNode + 'Microsoft\VSTO Runtime Setup\';
+  Log('GetVstorBuild: ' + vstorPath);
+  if not RegQueryStringValue(HKEY_LOCAL_MACHINE, vstorPath + 'v4R', 'Version', version) then
   begin
     { Check again without the R suffix. }
-    Log('GetVstorBuild: Attempting v4 key');
-    RegQueryStringValue(HKEY_LOCAL_MACHINE, vstorPath, 'Version', version)
+    Log('GetVstorBuild: v4R key not found, attempting v4 key');
+    if not RegQueryStringValue(HKEY_LOCAL_MACHINE, vstorPath + 'v4', 'Version', version) then
+    begin
+      Log('GetVstorBuild: v4 key not found either!');
+    end
   end;
-  Log('GetVstorBuild: Version:   ' + version);
-  build := Copy(version, 6, 5);
-  Log('GetVstorBuild: Build str: ' + build);
-  result := StrToIntDef(build, 0);
-  Log('GetVstorBuild: Build:     ' + IntToStr(result));
+  if Length(version) > 0 then
+  begin
+    Log('GetVstorBuild: Version:   ' + version);
+    build := Copy(version, 6, 5);
+    Log('GetVstorBuild: Build str: ' + build);
+    result := StrToIntDef(build, 0);
+    Log('GetVstorBuild: Build:     ' + IntToStr(result));
+  end
+  else
+  begin
+    Log('GetVstorBuild: Runtime not detected, returning build number 0');
+    result := 0;
+  end
 end;
 
 {
@@ -118,7 +129,7 @@ end;
 }
 function GetVstorInstallerPath(): string;
 begin
-  result := ExpandConstant('{%temp}\vstor_redist_40.exe');
+  result := ExpandConstant('{%temp}\vstor_redist.exe');
 end;
 
 {
@@ -176,21 +187,22 @@ begin
   begin
     if IsNetDownloaded then
     begin
-      Log('Valid .NET runtime download found, installing.');
+      Log('NeedToInstallDotNetRuntime: Valid .NET runtime download found, installing.');
       Exec(GetNetInstallerPath, '/norestart',
         '', SW_SHOW, ewWaitUntilTerminated, exitCode);
       BringToFrontAndRestore;
       if not IsNetInstalled then
       begin
+        Log('NeedToInstallDotNetRuntime: .NET runtime still not installed, warning user.');
         MsgBox(CustomMessage('StillNotInstalled'), mbInformation, MB_OK);
-        result := False;
+        result := True;
       end;
     end
     else
     begin
-      Log('No or invalid .NET runtime download found, will not install.');
+      Log('NeedToInstallDotNetRuntime: No or invalid .NET runtime download found, warning user.');
       MsgBox(CustomMessage('DownloadNotValidated'), mbInformation, MB_OK);
-      result := False;
+      result := True;
     end;
   end; { NeedToInstallDotNetRuntime }
 end;
@@ -204,21 +216,22 @@ begin
   begin
     if IsVstorDownloaded then
     begin
-      Log('Valid VSTO runtime download found, installing.');
+      Log('ExecuteVstorSetup: Valid VSTO runtime download found, installing.');
       Exec(GetVstorInstallerPath, '/norestart', '', SW_SHOW,
         ewWaitUntilTerminated, exitCode);
       BringToFrontAndRestore;
       if not IsVstorInstalled then
       begin
+        Log('ExecuteVstorSetup: VSTO runtime still not installed, warning user.');
         MsgBox(CustomMessage('StillNotInstalled'), mbInformation, MB_OK);
-        result := False;
+        result := True;
       end;
     end
     else
     begin
-      Log('No or invalid VSTO runtime download found, will not install.');
+      Log('ExecuteVstorSetup: No or invalid VSTO runtime download found, warning user.');
       MsgBox(CustomMessage('DownloadNotValidated'), mbInformation, MB_OK);
-      result := False;
+      result := True;
     end;
   end; { not IsVstorInstalled }
 end;

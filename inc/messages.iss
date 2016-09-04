@@ -34,7 +34,7 @@ en.InstallCaption=Runtime files downloaded
 en.InstallDesc=The required runtime files are ready to install.
 en.InstallMsg=Click 'Next' to beginn the installation.
 
-en.StillNotInstalled=The required additional runtime files are still not installed. Setup cannot continue. You may try again, or abort the installation.
+en.StillNotInstalled=The required additional runtime files are still not installed. Setup will continue, but unless you ensure that the runtimes are properly installed, the add-in will not function properly.
 en.DownloadNotValidated=A downloaded file has unexpected content. It may have not been downloaded correctly, or someone might have hampered with it. You may click 'Back' and then 'Next' to download it again.
 
 ; General messages [DE]
@@ -62,5 +62,5 @@ de.InstallCaption=Weitere .NET-Laufzeitdateien heruntergeladen
 de.InstallDesc=Die zusätzlichen benötigten Dateien von Microsoft können jetzt installiert werden.
 de.InstallMsg=Klicken Sie 'Weiter', um mit der Installation zu beginnen.
 
-de.StillNotInstalled=Die zusätzlichen benötigten Dateien wurden leider nicht korrekt installiert, so daß die Installation nicht fortgesetzt werden kann.
+de.StillNotInstalled=Die zusätzlichen benötigten Dateien wurden leider nicht korrekt installiert. Die Installation des Addins wird jetzt zwar fortgesetzt, aber solange Sie nicht die erforderlichen Laufzeitdateien installieren, wird es nicht funktionieren.
 de.DownloadNotValidated=Es wurde unerwarteter Inhalt in einer heruntergeladenen Datei gefunden. Die Installation kann so nicht fortgesetzt werden. Sie können aber 'Zurück' und dann 'Weiter' klicken, um den Download neu zu beginnen.

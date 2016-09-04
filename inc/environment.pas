@@ -87,14 +87,14 @@ begin
       position to get the build number. TODO: Make this future-proof.
     }
     build := Copy(value, 6, 4);
-    Log('Found ProductVersion "' + value + '" for queried Office version '
+    Log('GetOfficeBuild: Found ProductVersion "' + value + '" for queried Office version '
       + IntToStr(OfficeVersion) + ', extracted build number ' + build);
     OutBuild := StrToInt(build);
     result := true;
   end
   else
   begin
-    Log('Did not find LastProduct key for Office version ' +
+    Log('GetOfficeBuild: Did not find LastProduct key for Office version ' +
       IntToStr(OfficeVersion) + '.0.');
   end
 end;
@@ -106,7 +106,7 @@ end;
 function IsOffice2007Installed(): boolean;
 begin
   result := IsHostVersionInstalled(12);
-  if result then Log('Detected Office 2007.');
+  if result then Log('IsOffice2007Installed: Detected Office 2007.');
 end;
 
 
@@ -116,7 +116,7 @@ end;
 function IsOffice2010Installed(): boolean;
 begin
   result := IsHostVersionInstalled(14);
-  if result then Log('Detected Office 2010.');
+  if result then Log('IsOffice2010Installed: Detected Office 2010.');
 end;
 
 {
@@ -131,10 +131,10 @@ begin
   begin
     result := build = 4763; { 4763 is the original Office 2007 build }
     if result then
-      Log('Detected Office 2010 without service pack (v. 14.0, build 4763)')
+      Log('IsOffice2010NoSpInstalled: Detected Office 2010 without service pack (v. 14.0, build 4763)')
     else
     begin
-      Log('Detected Office 2010, apparently with some service pack (build ' +
+      Log('IsOffice2010NoSpInstalled: Detected Office 2010, apparently with some service pack (build ' +
         IntToStr(build) + ').');
     end
   end;
@@ -157,14 +157,20 @@ begin
     if IsOnly2007Installed then
     begin
       result := IsHotfixInstalled;
+      if result then
+        Log('CanInstallSystemWide: Only Office 2007 found, hotfix installed, can install system-wide.')
+      else
+        Log('CanInstallSystemWide: Only Office 2007 found but hotfix not installed, cannot install system-wide.')
     end
     else
     begin
+      Log('CanInstallSystemWide: User is admin, can install system-wide.')
       result := true;
     end;
   end
   else
   begin
+    Log('CanInstallSystemWide: User is not admin, cannot install system-wide.')
     result := false;
   end;
 end;

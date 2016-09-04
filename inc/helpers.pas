@@ -27,12 +27,23 @@ var
   actualSha1: string;
 begin
   try
+    Log('IsFileValid: Testing:  ' + file);
+    Log('IsFileValid: Expected: ' + expectedSha1);
     if FileExists(file) then
     begin
       actualSha1 := GetSHA1OfFile(file);
+      Log('IsFileValid: Actual:   ' + actualSha1);
+    end
+    else
+    begin
+      Log('IsFileValid: File not found!');
     end;
   finally
     result := actualSha1 = expectedSha1;
+    if result then
+      Log('IsFileValid: Match')
+    else
+      Log('IsFileValid: Mismatch');
   end;
 end;
 

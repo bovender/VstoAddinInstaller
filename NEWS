@@ -1,3 +1,16 @@
+Version 1.4.0 (2016-09-04)
+------------------------------------------------------------------------
+
+- Change: Change extension of Pascal script files to *.pas.
+- Change: Permit installation even if the .NET and VSTO runtimes are not installed. A warning is now shown to the user instead of denying installation.
+- Improvement: Better logging of VSTO runtime registry check.
+- Improvement: Better overall logging.
+- Improvement: Expected and actual checksums of runtime installers are now logged.
+- Improvement: Updated VSTO runtime download URL.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
 Version 1.3.5 (2016-09-02)
 ------------------------------------------------------------------------
 
