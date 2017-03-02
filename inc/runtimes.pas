@@ -6,7 +6,7 @@
 == Create additonal wizard pages
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)
-== (c) 2016 Daniel Kraus <bovender@bovender.de>
+== (c) 2016-2017 Daniel Kraus <bovender@bovender.de>
 == Published under the Apache License 2.0
 == See http://www.apache.org/licenses
 =====================================================================
@@ -74,7 +74,7 @@ end;
 }
 function IsNetInstalled(): boolean;
 begin
-  result := RegKeyExists(HKEY_LOCAL_MACHINE, 
+  result := RegKeyExists(HKEY_LOCAL_MACHINE,
     'SOFTWARE\' + GetWowNode + 'Microsoft\NET Framework Setup\NDP\v4');
 end;
 

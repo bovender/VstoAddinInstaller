@@ -1,22 +1,22 @@
 VstoAddinInstaller
 ===================
 
-[InnoSetup][] script to install and activate Visual Studio Tools for 
-Office&reg; (VSTO) addins. VstoAddinInstaller makes heavy use of the 
+[InnoSetup][] script to install and activate Visual Studio Tools for
+Office&reg; (VSTO) addins. VstoAddinInstaller makes heavy use of the
 InnoSetup Preprocessor (ISPP).
 
 Features
 --------
 
-- Installs Word&reg;, Excel&reg;, PowerPoint&reg;, or Outlook&reg; 
+- Installs Word&reg;, Excel&reg;, PowerPoint&reg;, or Outlook&reg;
   add-ins.
 - Downloads and installs .NET and VSTO runtimes if needed.
-- Checks if the target application is currently running and can 
-  automatically shut it down before proceeding with the installation 
+- Checks if the target application is currently running and can
+  automatically shut it down before proceeding with the installation
   process.
-- Can be used with an `/UPDATE` switch to silently shut down and 
+- Can be used with an `/UPDATE` switch to silently shut down and
   restart the target application after the installation.
-- Modular structure makes it easy to keep custom configuration 
+- Modular structure makes it easy to keep custom configuration
   separate from the core functionality.
 
 The script is based on the installer used by [Daniel's XL Toolbox][].
@@ -25,11 +25,11 @@ The script is based on the installer used by [Daniel's XL Toolbox][].
 Requirements
 ------------
 
-- [InnoSetup][] with InnoSetup Preprocessor; ideally you would obtain 
+- [InnoSetup][] with InnoSetup Preprocessor; ideally you would obtain
   the InnoSetup QuickStart Pack.
-- [InnoSetup Download Plugin][isdp] (takes care of downloading the 
+- [InnoSetup Download Plugin][isdp] (takes care of downloading the
   .NET and VSTO runtime installers on the target system, if needed)
-- Visual Studio with Visual Studio Tools for Office (VSTO) (included 
+- Visual Studio with Visual Studio Tools for Office (VSTO) (included
   in the 'Professional' editions).
 
 Some of these requirements should be fairly obvious...
@@ -38,13 +38,13 @@ Some of these requirements should be fairly obvious...
 Instructions for use
 --------------------
 
-VstoAddinInstaller is designed to keep itself out of your way: After 
-downloading and extracting the [archive][zip] (or cloning the [Git][] 
-repository), you should have a dedicated folder 'VstoAddinInstaller' 
-in your solution directory. You won't have to edit anything inside the 
-VstoAddinInstaller directory. A configuration file can be copied from 
-an example file `make-installer.dist.iss` from the `config-dist` 
-subdirectory to your solution's directory, where you may want to 
+VstoAddinInstaller is designed to keep itself out of your way: After
+downloading and extracting the [archive][zip] (or cloning the [Git][]
+repository), you should have a dedicated folder 'VstoAddinInstaller'
+in your solution directory. You won't have to edit anything inside the
+VstoAddinInstaller directory. A configuration file can be copied from
+an example file `make-installer.dist.iss` from the `config-dist`
+subdirectory to your solution's directory, where you may want to
 include it in your own version control system.
 
 A recommended folder structure is as follows:
@@ -77,57 +77,57 @@ A recommended folder structure is as follows:
 
 ### Cloning as Git submodule
 
-If you use [Git][] as your version control, you can clone the 
-VstoAddinInstaller respository into a submodule of your project 
+If you use [Git][] as your version control, you can clone the
+VstoAddinInstaller respository into a submodule of your project
 repository:
 
     git submodule add git@github.com:bovender/VstoAddinInstaller.git
- 
-You can then easily update the VstoAddinInstaller module by *changing 
+
+You can then easily update the VstoAddinInstaller module by *changing
 into the directory* and issuing
 
     git pull
 
-Because the entire VstoAddinInstaller repository is contained in the 
-submodule, you can switch between branches and use the `develop` 
+Because the entire VstoAddinInstaller repository is contained in the
+submodule, you can switch between branches and use the `develop`
 branch rather than the `master` branch if you wish to do so.
 
 
 ### Configuring
 
-You need to make a copy of `config-dist\make-installer.dist.iss` and 
-edit the contents. Ideally you would keep your copy of this file 
-outside the `VstoAddinInstaller` directory, as shown above, so it does 
+You need to make a copy of `config-dist\make-installer.dist.iss` and
+edit the contents. Ideally you would keep your copy of this file
+outside the `VstoAddinInstaller` directory, as shown above, so it does
 not get overwritten when you update VstoAddinInstaller.
 
-You can rename the file to `make-installer.iss` or whatever you wish; 
-the `.dist` part in the original file only serves to indicate that 
+You can rename the file to `make-installer.iss` or whatever you wish;
+the `.dist` part in the original file only serves to indicate that
 this is the distributed example file.
 
-Follow along the instructions in your copy of 
+Follow along the instructions in your copy of
 `make-installer.dist.iss`.
 
-**Important**: Each installer produced with InnoSetup must have its 
-own global unique identifier (GUID). Please insert your own GUID where 
-indicated. You can generate a GUID using the corresponding command 
+**Important**: Each installer produced with InnoSetup must have its
+own global unique identifier (GUID). Please insert your own GUID where
+indicated. You can generate a GUID using the corresponding command
 from the `Tools` menu in InnoSetup Studio, for example.
 
 
 ### Compiling the installer
 
-To compile the installer, simply run your copy of `make-installer.iss` 
+To compile the installer, simply run your copy of `make-installer.iss`
 through InnoSetup.
 
 
 ### Extending
 
-If you wish to add additional capabilities to your installer (e.g. 
-InnoSetup tasks), have a look in the `config-dist` directory where you 
+If you wish to add additional capabilities to your installer (e.g.
+InnoSetup tasks), have a look in the `config-dist` directory where you
 will find some example files.
 
-Currently it is not possible to run additonal code during 
-initialization of setup (`InitializeSetup`) or initialization of the 
-wizard (`InitializeWizard`). I have been thinking about how to provide 
+Currently it is not possible to run additonal code during
+initialization of setup (`InitializeSetup`) or initialization of the
+wizard (`InitializeWizard`). I have been thinking about how to provide
 this capability, but have not yet have the time to implement it.
 
 
@@ -136,8 +136,8 @@ Demos
 
 Demo projects are contained in the [demo](demo/) directory.
 
-In order to try out these demo installers, you must first build the 
-corresponding projects in Visual Studio. The binaries are not contained 
+In order to try out these demo installers, you must first build the
+corresponding projects in Visual Studio. The binaries are not contained
 in this repository!
 
 
@@ -145,7 +145,7 @@ Further information
 -------------------
 
 For background information on the prerequisites of a VSTO add-in, see
-<http://xltoolbox.net/blog/2015-01-30-net-vsto-add-ins-getting-prerequisites-right.html>.
+<https://www.xltoolbox.net/blog/2015-01-30-net-vsto-add-ins-getting-prerequisites-right.html>.
 
 
 Related
@@ -161,12 +161,12 @@ VstoAddinInstaller is [semantically versioned][semver] using Git tags.
 
 In short: The version number follows the scheme `MAJOR.MINOR.PATCH`.
 
-- An increase in the `MAJOR` version number signifies API-breaking 
-  changes, i.e., if you decide to upgrade, you *must* adjust your local 
+- An increase in the `MAJOR` version number signifies API-breaking
+  changes, i.e., if you decide to upgrade, you *must* adjust your local
   copy of `make-install.iss`.
-- An increase in the `MINOR` version number denotes new or improved 
+- An increase in the `MINOR` version number denotes new or improved
   features. You can upgrade without adjusting your `make-install.iss`.
-- The `PATCH` number is increased with bug fixes. Again, no need to edit 
+- The `PATCH` number is increased with bug fixes. Again, no need to edit
   your copy of `make-install.iss`.
 
 
@@ -175,7 +175,7 @@ License
 
 Published under the [Apache License, Version 2.0](LICENSE).
 
-        Copyright (C) 2016 Daniel Kraus (bovender) <http://github.com/bovender>
+        Copyright (C) 2016-2017 Daniel Kraus (bovender) <https://github.com/bovender>
 
         Licensed under the Apache License, Version 2.0 (the "License");
         you may not use this file except in compliance with the License.
@@ -189,12 +189,12 @@ Published under the [Apache License, Version 2.0](LICENSE).
         See the License for the specific language governing permissions and
         limitations under the License.
 
-Microsoft®, Windows®, Office, and Excel&reg;, PowerPoint&reg;, and 
-Outlook&reg; are either registered trademarks or trademarks of Microsoft 
+Microsoft®, Windows®, Office, and Excel&reg;, PowerPoint&reg;, and
+Outlook&reg; are either registered trademarks or trademarks of Microsoft
 Corporation in the United States and/or other countries.  
 
 [InnoSetup]: http://www.jrsoftware.org/isinfo.php
-[isdp]: http://mitrichsoftware.wordpress.com 
+[isdp]: http://mitrichsoftware.wordpress.com
 [Daniel's XL Toolbox]: https://www.xltoolbox.net
 [ZIP]: https://github.com/bovender/VstoAddinInstaller/archive/master.zip
 [Git]: http://git-scm.com/downloads
