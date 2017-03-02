@@ -2,11 +2,11 @@
 ; == demo\make-installer-word.iss
 ; == Part of VstoAddinInstaller
 ; == (https://github.com/bovender/VstoAddinInstaller)
-; == (c) 2016 Daniel Kraus <bovender@bovender.de>
+; == (c) 2016-2017 Daniel Kraus <bovender@bovender.de>
 ; == Published under the Apache License 2.0
 ; == See http://www.apache.org/licenses
 ; =====================================================================
-; 
+;
 ; This is the configuration file for the demo installer.
 ; To try out this script, you must first build the VSTO project in
 ; Visual Studio with Debug configuration.
@@ -20,7 +20,7 @@
 #define COMPANY "Daniel Kraus (bovende)"
 #define HOMEPAGE "https://github.com/bovender/VstoAddinInstaller"
 #define DESCRIPTION "Demonstrate VstoAddinInstaller with Word."
-#define PUB_YEARS "2016"
+#define PUB_YEARS "2017"
 
 #define SOURCEDIR "VstoInstallerDemoWord\bin\Debug\"
 #define VSTOFILE "VstoInstallerDemoWord.vsto"

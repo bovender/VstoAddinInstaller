@@ -4,7 +4,7 @@
 == Pascal/RemObjects code section
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)
-== (c) 2016 Daniel Kraus <bovender@bovender.de>
+== (c) 2016-2017 Daniel Kraus <bovender@bovender.de>
 == Published under the Apache License 2.0
 == See http://www.apache.org/licenses
 =====================================================================
@@ -29,7 +29,7 @@ var
 #include "wizard-pages.pas"
 #include "detect-running-app.pas"
 
-  
+
 {
   Returns true if running on a zero client. The algorithm has only been
   tested for VMware Horizon/Teradici clients.
@@ -57,7 +57,7 @@ end;
 }
 function ShouldShowDirPage(): boolean;
 begin
-  result := IsAdminLoggedOn or IsZeroClient;
+  result := IsAdminLoggedOn; // or IsZeroClient;
 end;
 
 function InitializeSetup(): boolean;
@@ -99,7 +99,7 @@ begin
     end;
   end;
 end;
-	
+
 procedure InitializeWizard();
 begin
   CreateSingleOrAllUserPage;
@@ -166,7 +166,7 @@ begin
     begin
       { Return true if installation succeeds (or no installation required) }
       result := ExecuteNetSetup and ExecuteVstorSetup;
-    end; 
+    end;
   end; { not PrerequisitesAreMet }
 end;
 
@@ -190,7 +190,7 @@ begin
     if PageID = PageCannotInstall.ID then
     begin
       { Skip the warning if the user is an admin. }
-      result := IsAdminLoggedOn 
+      result := IsAdminLoggedOn
       if not result then
       begin
         Log('ShouldSkipPage: Warning user that required runtimes cannot be installed due to missing privileges');
@@ -231,7 +231,7 @@ begin
   if (PageID = wpSelectDir) or (PageID = wpReady) then
   begin
     {
-      Do not show the pages to select the target directory, and the ready 
+      Do not show the pages to select the target directory, and the ready
       page if the user is not an admin.
     }
     result := not ShouldShowDirPage;
@@ -257,16 +257,16 @@ begin
   end
   else
   begin
-    if IsZeroClient then
-    begin
-      Log('SuggestInstallDir: Looks like zero client, suggesting user docs folder');
-      dir := ExpandConstant('{userdocs}')
-    end
-    else
-    begin
+    // if IsZeroClient then
+    // begin
+    //   Log('SuggestInstallDir: Looks like zero client, suggesting user docs folder');
+    //   dir := ExpandConstant('{userdocs}')
+    // end
+    // else
+    // begin
       Log('SuggestInstallDir: Suggesting user profile folder');
       dir := ExpandConstant('{userappdata}')
-    end
+    // end
   end;
   result := AddBackslash(dir) + '{#ADDIN_SHORT_NAME}';
   Log('SuggestInstallDir: ' + result);

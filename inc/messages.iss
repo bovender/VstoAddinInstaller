@@ -2,13 +2,13 @@
 ; == inc\messages.iss
 ; == Part of VstoAddinInstaller
 ; == (https://github.com/bovender/VstoAddinInstaller)
-; == (c) 2016 Daniel Kraus <bovender@bovender.de>
+; == (c) 2016-2017 Daniel Kraus <bovender@bovender.de>
 ; == Published under the Apache License 2.0
 ; == See http://www.apache.org/licenses
 ; =====================================================================
 
 en.OfficeIsRunning=Your Office application must be closed in order to continue installation. If you click 'OK', the application will be shut down.
-de.OfficeIsRunning=Ihre Office-Anwendung muß geschlossen werden, um mit der Installation fortzufahren. Wenn Sie auf 'OK' klicken, wird die Anwendung geschlossen.
+de.OfficeIsRunning=Ihre Office-Anwendung muï¿½ geschlossen werden, um mit der Installation fortzufahren. Wenn Sie auf 'OK' klicken, wird die Anwendung geschlossen.
 
 en.SingleOrMulti=Single-user or system-wide install
 en.SingleOrMultiSubcaption=Install for the current user only or for all users
@@ -39,28 +39,28 @@ en.DownloadNotValidated=A downloaded file has unexpected content. It may have no
 
 ; General messages [DE]
 de.SingleOrMulti=Einzelner oder alle Benutzer
-de.SingleOrMultiSubcaption=Geben Sie an, für wen die Installation sein soll
-de.SingleOrMultiDesc=Bitte geben Sie an, ob das Addin nur für Sie oder für alle Benutzer installiert werden soll.
-de.SingleOrMultiSingle=Ein Benutzer (nur für mich)
+de.SingleOrMultiSubcaption=Geben Sie an, fï¿½r wen die Installation sein soll
+de.SingleOrMultiDesc=Bitte geben Sie an, ob das Addin nur fï¿½r Sie oder fï¿½r alle Benutzer installiert werden soll.
+de.SingleOrMultiSingle=Ein Benutzer (nur fï¿½r mich)
 de.SingleOrMultiAll=Alle Benutzer (systemweit)
-de.Office2007Required=Dieses Add-in läuft nur auf Office 2007 und neueren Versionen.
+de.Office2007Required=Dieses Add-in lï¿½uft nur auf Office 2007 und neueren Versionen.
 
 ; "Download required" messages (.NET and VSTOR runtimes) [DE]
-de.CannotInstallCaption=Administratorrechte benötigt
-de.CannotInstallDesc=Sie haben nicht die erforderlichen Benutzerrechte, um weitere benötigte Laufzeitdateien zu installieren.
-de.CannotInstallMsg=Sie können mit der Installation fortfahren, aber das Addin wird nicht starten, solange die VSTO-Laufzeitdateien nicht von einem Admin installiert wurden. Tipp: Wenn Sie Windows Vista oder neuer verwenden, klicken Sie mit der rechten Maustaste auf die Installationsdatei und wählen "Als Administrator ausführen".
+de.CannotInstallCaption=Administratorrechte benï¿½tigt
+de.CannotInstallDesc=Sie haben nicht die erforderlichen Benutzerrechte, um weitere benï¿½tigte Laufzeitdateien zu installieren.
+de.CannotInstallMsg=Sie kï¿½nnen mit der Installation fortfahren, aber das Addin wird nicht starten, solange die VSTO-Laufzeitdateien nicht von einem Admin installiert wurden. Tipp: Wenn Sie Windows Vista oder neuer verwenden, klicken Sie mit der rechten Maustaste auf die Installationsdatei und wï¿½hlen "Als Administrator ausfï¿½hren".
 de.CannotInstallCont=Trotzdem installieren, obwohl es nicht funktionieren wird
 de.CannotInstallAbort=Installation abbrechen
 
 ; DownloadInfoPage [EN]
 de.RequiredCaption=Weitere Laufzeitdateien erforderlich
-de.RequiredDesc=Weitere Laufzeitdateien für das .NET-Framework von Microsoft werden benötigt, um das Addin verwenden zu können.
-de.RequiredMsg=%d Datei(en) mit ca. %s MiB muß/müssen von den Microsoft-Servern heruntergeladen werden. Klicken Sie 'Weiter', um den Download zu beginnen.
+de.RequiredDesc=Weitere Laufzeitdateien fï¿½r das .NET-Framework von Microsoft werden benï¿½tigt, um das Addin verwenden zu kï¿½nnen.
+de.RequiredMsg=%d Datei(en) mit ca. %s MiB muï¿½/mï¿½ssen von den Microsoft-Servern heruntergeladen werden. Klicken Sie 'Weiter', um den Download zu beginnen.
 
 ; InstallInfoPage [EN]
 de.InstallCaption=Weitere .NET-Laufzeitdateien heruntergeladen
-de.InstallDesc=Die zusätzlichen benötigten Dateien von Microsoft können jetzt installiert werden.
+de.InstallDesc=Die zusï¿½tzlichen benï¿½tigten Dateien von Microsoft kï¿½nnen jetzt installiert werden.
 de.InstallMsg=Klicken Sie 'Weiter', um mit der Installation zu beginnen.
 
-de.StillNotInstalled=Die zusätzlichen benötigten Dateien wurden leider nicht korrekt installiert. Die Installation des Addins wird jetzt zwar fortgesetzt, aber solange Sie nicht die erforderlichen Laufzeitdateien installieren, wird es nicht funktionieren.
-de.DownloadNotValidated=Es wurde unerwarteter Inhalt in einer heruntergeladenen Datei gefunden. Die Installation kann so nicht fortgesetzt werden. Sie können aber 'Zurück' und dann 'Weiter' klicken, um den Download neu zu beginnen.
+de.StillNotInstalled=Die zusï¿½tzlichen benï¿½tigten Dateien wurden leider nicht korrekt installiert. Die Installation des Addins wird jetzt zwar fortgesetzt, aber solange Sie nicht die erforderlichen Laufzeitdateien installieren, wird es nicht funktionieren.
+de.DownloadNotValidated=Es wurde unerwarteter Inhalt in einer heruntergeladenen Datei gefunden. Die Installation kann so nicht fortgesetzt werden. Sie kï¿½nnen aber 'Zurï¿½ck' und dann 'Weiter' klicken, um den Download neu zu beginnen.
