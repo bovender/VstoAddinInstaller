@@ -40,7 +40,11 @@ end;
 
 procedure CreateDownloadInfoPage();
 var
+#IF DEFINED UNICODE
   bytes: Int64;
+#ELSE
+  bytes: DWord;
+#ENDIF
   mib: Single;
   size: String;
 begin
