@@ -78,7 +78,7 @@ SolidCompression=true
 
 #ifdef INSTALLER_ICO
   SetupIconFile={#SETUPFILESDIR}{#INSTALLER_ICO}
-  UninstallDisplayIcon={#UNINSTALLDIR}{#INSTALLER_ICO}
+  UninstallDisplayIcon={#AddBackslash(UNINSTALLDIR)}{#INSTALLER_ICO}
 #endif
 
 #ifdef INSTALLER_IMAGE_LARGE
