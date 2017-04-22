@@ -1,4 +1,3 @@
-[![Beerpay](https://beerpay.io/bovender/VstoAddinInstaller/badge.svg?style=flat-square)](https://beerpay.io/bovender/VstoAddinInstaller)
 VstoAddinInstaller
 ===================
 
@@ -170,6 +169,18 @@ In short: The version number follows the scheme `MAJOR.MINOR.PATCH`.
 - The `PATCH` number is increased with bug fixes. Again, no need to edit
   your copy of `make-install.iss`.
 
+ 
+Contributing
+------------
+
+You are welcome to submit pull requests for this project. I like to 
+follow [Vincent Drieessen's Git branching model][nvie] where development 
+takes place on the `develop` branch, and the `master` branch always 
+points to the latest stable release.
+
+Therefore, I would like to ask you to issue your pull request against 
+the `develop` branch.
+
 
 License
 -------
@@ -201,5 +212,6 @@ Corporation in the United States and/or other countries.
 [Git]: http://git-scm.com/downloads
 [eai]: https://github.com/bovender/ExcelAddinInstaller
 [semver]: http://semver.org
+[nvie]: http://nvie.com/posts/a-successful-git-branching-model
 
 <!-- vim: set tw=72 ts=4 :-->
