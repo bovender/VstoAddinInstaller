@@ -4,7 +4,7 @@
 == Pascal/RemObjects code section
 == Part of VstoAddinInstaller
 == (https://github.com/bovender/VstoAddinInstaller)
-== (c) 2016-2017 Daniel Kraus <bovender@bovender.de>
+== (c) 2016-2018 Daniel Kraus <bovender@bovender.de>
 == Published under the Apache License 2.0
 == See http://www.apache.org/licenses
 =====================================================================
@@ -63,40 +63,21 @@ end;
 function InitializeSetup(): boolean;
 var
   i: integer;
-  minVersionInstalled: boolean;
 begin
-  {
-    Determine if Office 2007 or newer is installed (absolute requirement
-    for this VSTO add-in). Office 2007 ist version 12.0.
-  }
-  for i := 12 to MAX_VERSION do
+  for i := 1 to ParamCount do
   begin
-    minVersionInstalled := minVersionInstalled or IsHostVersionInstalled(i);
+    if uppercase(ParamStr(i)) = '/UPDATE' then
+    begin
+      Log('InitializeSetup: /UPDATE switch found');
+      IsUpdate := true;
+      exePath := CloseAppNoninteractively();
+      result := true;
+    end
   end;
 
-  if not minVersionInstalled then
+  if not IsUpdate then
   begin
-    result := False;
-    Log('InitializeSetup: Informing user that Office 2007 or newer is required.');
-    MsgBox(CustomMessage('Office2007Required'), mbInformation, MB_OK);
-  end
-  else
-  begin
-    for i := 1 to ParamCount do
-    begin
-      if uppercase(ParamStr(i)) = '/UPDATE' then
-      begin
-        Log('InitializeSetup: /UPDATE switch found');
-        IsUpdate := true;
-        exePath := CloseAppNoninteractively();
-        result := true;
-      end
-    end;
-
-    if not IsUpdate then
-    begin
-      result := CloseAppInteractively();
-    end;
+    result := CloseAppInteractively();
   end;
 end;
 

@@ -187,7 +187,7 @@ License
 
 Published under the [Apache License, Version 2.0](LICENSE).
 
-        Copyright (C) 2016-2017 Daniel Kraus (bovender) <https://github.com/bovender>
+        Copyright (C) 2016-2018 Daniel Kraus (bovender) <https://github.com/bovender>
 
         Licensed under the Apache License, Version 2.0 (the "License");
         you may not use this file except in compliance with the License.
