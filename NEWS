@@ -1,4 +1,12 @@
-Version 1.4.2 (2017-04-20)
+Version 1.4.3 (2018-08-15)
+------------------------------------------------------------------------
+
+- Fix: Do not attempt to check whether a minimum Office version is installed. Latest Offices evicently cannot be detected reliably in the conventional way, i.e. by testing the presence of certain registry keys.  In order not to lock people out, the relevant code has been removed entirely. Nobody should be using Office 2003 or older nowadays anyway.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+Version 1.4.2 (2017-04-22)
 ------------------------------------------------------------------------
 
 - Fix: Prevent compilation error with non-unicode versions of InnoSetup.
